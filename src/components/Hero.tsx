@@ -5,7 +5,6 @@ import { ArrowRight } from "lucide-react";
 export const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background pt-16">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_hsl(var(--accent)/0.15),transparent_70%)]" />
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-teal to-transparent animate-circuit-line" style={{ animationDelay: '0s' }} />
         <div className="absolute top-0 left-1/2 w-px h-full bg-gradient-to-b from-transparent via-teal to-transparent animate-circuit-line" style={{ animationDelay: '1s' }} />
