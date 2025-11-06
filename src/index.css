@@ -17,7 +17,7 @@ All colors MUST be HSL.
     --popover: 210 18% 12%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 167 67% 18%;
+    --primary: 175 50% 45%;
     --primary-foreground: 0 0% 98%;
 
     --secondary: 210 6% 77%;
@@ -26,26 +26,27 @@ All colors MUST be HSL.
     --muted: 210 15% 20%;
     --muted-foreground: 0 0% 70%;
 
-    --accent: 187 100% 50%;
-    --accent-foreground: 210 20% 8%;
+    --accent: 175 50% 45%;
+    --accent-foreground: 0 0% 98%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
     --border: 210 15% 20%;
     --input: 210 15% 20%;
-    --ring: 167 67% 18%;
+    --ring: 175 50% 45%;
 
     --radius: 0.75rem;
 
-    --metallic-green: 167 67% 18%;
+    --teal: 175 50% 45%;
+    --teal-dark: 175 50% 35%;
+    --teal-light: 175 50% 55%;
     --matte-silver: 210 6% 77%;
-    --electric-cyan: 187 100% 50%;
     --graphite: 210 20% 8%;
     --graphite-light: 210 18% 12%;
     
-    --glow-cyan: 0 0 30px hsla(187, 100%, 50%, 0.5);
-    --gradient-metallic: linear-gradient(135deg, hsl(167 67% 18%), hsl(187 100% 50%));
+    --glow-teal: 0 0 30px hsla(175, 50%, 45%, 0.5);
+    --gradient-teal: linear-gradient(135deg, hsl(175 50% 35%), hsl(175 50% 55%));
   }
 }
 

@@ -65,9 +65,9 @@ export const Footer = () => {
               <Input 
                 type="email" 
                 placeholder="Enter your email" 
-                className="bg-card border-border focus:border-accent"
+                className="bg-card border-border focus:border-primary"
               />
-              <Button className="bg-accent text-accent-foreground hover:bg-accent/90">
+              <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
                 Subscribe
               </Button>
             </div>
@@ -78,8 +78,8 @@ export const Footer = () => {
               © 2025 UpDown Robotics. All rights reserved.
             </p>
             <div className="flex gap-6">
-              <a href="#" className="text-sm text-muted-foreground hover:text-accent transition-colors">Privacy Policy</a>
-              <a href="#" className="text-sm text-muted-foreground hover:text-accent transition-colors">Terms of Service</a>
+              <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">Privacy Policy</a>
+              <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">Terms of Service</a>
             </div>
           </div>
         </div>

@@ -90,7 +90,7 @@ export const VisionRoadmap = () => {
           
           <div className="text-center mt-16">
             <a href="/contact">
-              <button className="px-8 py-4 bg-gradient-to-r from-accent to-primary text-background font-bold text-lg rounded-xl hover:shadow-lg hover:shadow-accent/50 transition-all duration-300 animate-pulse-slow">
+              <button className="px-8 py-4 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground font-bold text-lg rounded-xl hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 animate-pulse-slow">
                 Join the Automation Revolution
               </button>
             </a>

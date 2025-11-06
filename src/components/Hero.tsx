@@ -7,9 +7,9 @@ export const Hero = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background pt-16">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_hsl(var(--accent)/0.15),transparent_70%)]" />
       <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-electric-cyan to-transparent animate-circuit-line" style={{ animationDelay: '0s' }} />
-        <div className="absolute top-0 left-1/2 w-px h-full bg-gradient-to-b from-transparent via-electric-cyan to-transparent animate-circuit-line" style={{ animationDelay: '1s' }} />
-        <div className="absolute top-0 left-3/4 w-px h-full bg-gradient-to-b from-transparent via-electric-cyan to-transparent animate-circuit-line" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-teal to-transparent animate-circuit-line" style={{ animationDelay: '0s' }} />
+        <div className="absolute top-0 left-1/2 w-px h-full bg-gradient-to-b from-transparent via-teal to-transparent animate-circuit-line" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-0 left-3/4 w-px h-full bg-gradient-to-b from-transparent via-teal to-transparent animate-circuit-line" style={{ animationDelay: '2s' }} />
       </div>
       
       <div className="container mx-auto px-6 py-20 relative z-10">
@@ -37,7 +37,7 @@ export const Hero = () => {
                 </Button>
               </a>
               <a href="#technology">
-                <Button size="lg" variant="outline" className="text-lg border-accent hover:bg-accent/10 hover:text-accent">
+                <Button size="lg" variant="outline" className="text-lg">
                   See It in Action
                 </Button>
               </a>
@@ -45,14 +45,14 @@ export const Hero = () => {
           </div>
           
           <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-accent/20 to-primary/20 blur-3xl" />
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,transparent_0%,hsl(var(--accent)/0.1)_50%,transparent_100%)] animate-pulse-slow" />
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-primary/20 blur-3xl" />
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,transparent_0%,hsl(var(--primary)/0.1)_50%,transparent_100%)] animate-pulse-slow" />
             <img 
               src={robotApartment} 
               alt="UpDown Robot in apartment corridor" 
-              className="relative rounded-2xl shadow-2xl shadow-accent/20 animate-float"
+              className="relative rounded-2xl shadow-2xl shadow-primary/20 animate-float"
             />
-            <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-3/4 h-8 bg-accent/20 blur-2xl rounded-full" />
+            <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-3/4 h-8 bg-primary/20 blur-2xl rounded-full" />
             <div className="absolute bottom-8 left-8 right-8 bg-card/80 backdrop-blur-sm rounded-xl p-4 border border-primary/20">
               <div className="flex items-center gap-3">
                 <div className="w-2 h-2 bg-primary rounded-full animate-glow-pulse" />
