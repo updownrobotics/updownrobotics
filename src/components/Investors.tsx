@@ -67,10 +67,12 @@ export const Investors = () => {
               </div>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-                <Button size="lg" className="text-lg">
-                  Invest in the Future of RaaS
-                </Button>
-                <Button size="lg" variant="outline" className="text-lg">
+                <a href="/contact">
+                  <Button size="lg" className="text-lg bg-accent text-accent-foreground hover:bg-accent/90 border-2 border-accent shadow-lg shadow-accent/30 animate-pulse-slow">
+                    Invest in the Future of RaaS
+                  </Button>
+                </a>
+                <Button size="lg" variant="outline" className="text-lg border-accent hover:bg-accent/10 hover:text-accent">
                   Download Pitch Deck
                 </Button>
               </div>

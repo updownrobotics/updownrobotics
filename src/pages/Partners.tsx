@@ -42,18 +42,20 @@ const Partners = () => {
 
         {/* Partner Grid */}
         <section className="container mx-auto px-4 mb-20">
+          <h2 className="text-3xl font-bold text-center mb-12 text-foreground">Our <span className="text-accent">Partners</span></h2>
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {partners.map((partner, index) => (
               <div 
                 key={index}
-                className="bg-card p-8 rounded-lg border border-border text-center hover:border-primary transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,178,255,0.3)] animate-fade-in group"
+                className="relative bg-card p-8 rounded-lg border border-border text-center hover:border-accent transition-all duration-300 hover:shadow-lg hover:shadow-accent/20 animate-fade-in group"
                 style={{ animationDelay: `${index * 0.05}s` }}
               >
-                <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <Building2 className="w-10 h-10 text-primary" />
+                <div className="absolute inset-0 bg-gradient-to-br from-accent/10 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="relative w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-metallic-green/30 to-accent/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <Building2 className="w-10 h-10 text-accent" />
                 </div>
-                <h3 className="text-xl font-bold text-foreground mb-2">{partner.name}</h3>
-                <p className="text-sm text-primary">{partner.category}</p>
+                <h3 className="relative text-xl font-bold text-foreground mb-2 group-hover:text-accent transition-colors">{partner.name}</h3>
+                <p className="relative text-sm text-muted-foreground">{partner.category}</p>
               </div>
             ))}
           </div>
@@ -66,10 +68,10 @@ const Partners = () => {
             {benefits.map((benefit, index) => (
               <div 
                 key={index}
-                className="bg-card p-6 rounded-lg border border-border hover:border-primary transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,178,255,0.3)] animate-fade-in"
+                className="bg-card p-6 rounded-lg border border-border hover:border-accent transition-all duration-300 hover:shadow-lg hover:shadow-accent/20 animate-fade-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <benefit.icon className="w-12 h-12 text-primary mb-4 animate-glow-pulse" />
+                <benefit.icon className="w-12 h-12 text-accent mb-4 animate-glow-pulse" />
                 <h3 className="text-lg font-bold text-foreground mb-2">{benefit.title}</h3>
                 <p className="text-muted-foreground text-sm">{benefit.desc}</p>
               </div>
@@ -79,17 +81,19 @@ const Partners = () => {
 
         {/* CTA Section */}
         <section className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center bg-gradient-to-r from-primary/10 to-primary/5 p-12 rounded-lg border border-primary/20 animate-fade-in">
+          <div className="max-w-3xl mx-auto text-center bg-gradient-to-r from-accent/10 to-primary/5 p-12 rounded-lg border border-accent/20 animate-fade-in">
             <h2 className="text-3xl font-bold text-foreground mb-4">Ready to Partner?</h2>
             <p className="text-lg text-muted-foreground mb-6">
               Let's build the future of autonomous cleaning together
             </p>
-            <Button 
-              size="lg"
-              className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-[0_0_20px_rgba(0,178,255,0.5)] hover:shadow-[0_0_30px_rgba(0,178,255,0.7)] transition-all duration-300"
-            >
-              Partner With Us
-            </Button>
+            <a href="/contact">
+              <Button 
+                size="lg"
+                className="bg-accent text-accent-foreground hover:bg-accent/90 shadow-lg shadow-accent/30 hover:shadow-accent/50 transition-all duration-300 animate-pulse-slow"
+              >
+                Partner With Us
+              </Button>
+            </a>
           </div>
         </section>
       </main>

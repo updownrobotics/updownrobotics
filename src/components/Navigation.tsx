@@ -47,8 +47,12 @@ export const Navigation = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center animate-glow-pulse">
-            <img src={logo} alt="UpDown Robotics Logo" className="h-10 w-auto" />
+          <Link to="/" className="flex items-center group">
+            <img 
+              src={logo} 
+              alt="UpDown Robotics Logo" 
+              className="h-10 w-auto transition-all duration-300 group-hover:drop-shadow-[0_0_15px_rgba(0,229,255,0.6)]" 
+            />
           </Link>
           
           <div className="hidden lg:flex items-center space-x-1">
