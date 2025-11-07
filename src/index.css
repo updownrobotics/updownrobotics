@@ -57,5 +57,14 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    cursor: url('/logo.png') 16 16, auto;
+  }
+  
+  * {
+    cursor: url('/logo.png') 16 16, auto;
+  }
+  
+  a, button {
+    cursor: url('/logo.png') 16 16, pointer;
   }
 }
