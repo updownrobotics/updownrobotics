@@ -3,6 +3,7 @@ import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { TrendingUp, Target, Code2, Layers, Globe } from "lucide-react";
 import robotMall from "@/assets/robot-mall.png";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const highlights = [
   {
@@ -28,6 +29,10 @@ const highlights = [
 ];
 
 const Investors = () => {
+  const imageReveal = useScrollReveal();
+  const highlightsReveal = useScrollReveal();
+  const thesisReveal = useScrollReveal();
+  
   return (
     <main className="min-h-screen bg-gradient-to-b from-deep-black to-background">
       <Navigation />
@@ -46,7 +51,7 @@ const Investors = () => {
           </div>
 
           {/* Image */}
-          <div className="mb-20 relative">
+          <div ref={imageReveal.ref} className={`mb-20 relative transition-all duration-700 ${imageReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <img 
               src={robotMall} 
               alt="UpDown Robotics Technology" 
@@ -55,7 +60,7 @@ const Investors = () => {
           </div>
 
           {/* Highlights */}
-          <div className="grid md:grid-cols-2 gap-8 mb-20">
+          <div ref={highlightsReveal.ref} className={`grid md:grid-cols-2 gap-8 mb-20 transition-all duration-700 ${highlightsReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             {highlights.map((item, index) => (
               <div
                 key={index}
@@ -69,7 +74,7 @@ const Investors = () => {
           </div>
 
           {/* Investment Thesis */}
-          <div className="p-8 bg-gradient-to-br from-card to-card/50 border border-primary/30 rounded-2xl mb-12">
+          <div ref={thesisReveal.ref} className={`p-8 bg-gradient-to-br from-card to-card/50 border border-primary/30 rounded-2xl mb-12 transition-all duration-700 ${thesisReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <TrendingUp className="w-12 h-12 text-primary mb-6" />
             <h2 className="text-3xl font-heading font-bold mb-6">Why Now?</h2>
             

@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { CheckCircle, TrendingDown, BarChart3, Award, Zap } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const benefits = [
   { icon: TrendingDown, title: "Lower Cleaning Cost", description: "Reduce operational expenses significantly" },
@@ -24,6 +25,9 @@ const suitableFor = [
 ];
 
 const PilotProgram = () => {
+  const benefitsReveal = useScrollReveal();
+  const formReveal = useScrollReveal();
+  
   const [formData, setFormData] = useState({
     name: "",
     organization: "",
@@ -73,7 +77,7 @@ const PilotProgram = () => {
           </div>
 
           {/* Benefits */}
-          <div className="mb-20">
+          <div ref={benefitsReveal.ref} className={`mb-20 transition-all duration-700 ${benefitsReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <h2 className="text-3xl font-heading font-bold text-center mb-12">
               Why Join the Pilot?
             </h2>
@@ -92,7 +96,7 @@ const PilotProgram = () => {
             </div>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
+          <div ref={formReveal.ref} className={`grid lg:grid-cols-2 gap-12 items-start transition-all duration-700 ${formReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             {/* Suitable For */}
             <div className="space-y-8">
               <div>
