@@ -13,6 +13,11 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        'montserrat': ['Montserrat', 'sans-serif'],
+        'poppins': ['Poppins', 'sans-serif'],
+        'space-grotesk': ['Space Grotesk', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -61,6 +66,7 @@ export default {
         teal: "hsl(var(--teal))",
         "teal-dark": "hsl(var(--teal-dark))",
         "teal-light": "hsl(var(--teal-light))",
+        "electric-cyan": "hsl(var(--electric-cyan))",
         "matte-silver": "hsl(var(--matte-silver))",
       },
       borderRadius: {
