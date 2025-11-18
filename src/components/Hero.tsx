@@ -56,7 +56,7 @@ export const Hero = () => {
         </div>
 
         <div className="mt-32 mb-16 text-center max-w-5xl mx-auto animate-fade-in" style={{ animationDelay: '0.4s' }}>
-          <div className="p-8 bg-card/50 backdrop-blur-sm border border-border rounded-2xl">
+          <div className="p-8 bg-card border border-border rounded-2xl shadow-lg shadow-primary/30">
             <Zap className="w-12 h-12 text-primary mx-auto mb-4" />
             <p className="text-lg md:text-xl text-foreground leading-relaxed">
               UpDown Robotics builds intelligent cleaning systems optimized for India's <strong className="text-primary">apartments, commercial buildings, malls, tech parks, hotels, and hospitals</strong>.
