@@ -2,7 +2,6 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { TrendingUp, Target, Code2, Layers, Globe } from "lucide-react";
-import robotMall from "@/assets/robot-mall.png";
 
 const highlights = [
   {
@@ -43,16 +42,6 @@ const Investors = () => {
               UpDown Robotics is building India's first intelligent indoor cleaning AMR platform. 
               We are open to strategic investors and technology partners.
             </p>
-          </div>
-
-          {/* Image */}
-          <div className="mb-20 relative">
-            <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full" />
-            <img 
-              src={robotMall} 
-              alt="UpDown Robotics Technology" 
-              className="relative rounded-2xl shadow-2xl mx-auto"
-            />
           </div>
 
           {/* Highlights */}
