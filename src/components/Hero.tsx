@@ -1,68 +1,68 @@
 import { Button } from "@/components/ui/button";
-import robotApartment from "@/assets/robot-apartment.png";
-import { ArrowRight } from "lucide-react";
+import robotOffice from "@/assets/robot-office.png";
+import { Zap } from "lucide-react";
 
 export const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background pt-16">
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-teal to-transparent animate-circuit-line" style={{ animationDelay: '0s' }} />
-        <div className="absolute top-0 left-1/2 w-px h-full bg-gradient-to-b from-transparent via-teal to-transparent animate-circuit-line" style={{ animationDelay: '1s' }} />
-        <div className="absolute top-0 left-3/4 w-px h-full bg-gradient-to-b from-transparent via-teal to-transparent animate-circuit-line" style={{ animationDelay: '2s' }} />
+    <section className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden bg-gradient-to-b from-deep-black via-background to-background">
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_hsl(var(--primary)/0.15),transparent_50%)]" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-float" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-electric-cyan/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }} />
       </div>
       
-      <div className="container mx-auto px-6 py-20 relative z-10">
+      <div className="container mx-auto relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8 animate-fade-in">
-            <div className="inline-block px-4 py-2 bg-secondary rounded-full border border-primary/20">
-              <p className="text-sm text-primary font-medium">Robots-as-a-Service</p>
+          <div className="text-center lg:text-left space-y-8 animate-fade-in">
+            <div className="inline-block px-4 py-2 bg-primary/10 border border-primary/30 rounded-full">
+              <span className="text-primary font-accent font-semibold text-sm md:text-base">ROBOTS-AS-A-SERVICE</span>
             </div>
             
-            <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-              Smarter Movement.
-              <br />
-              <span className="text-primary">Cleaner Future.</span>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-bold leading-tight">
+              India's First 5-in-1 <span className="text-primary">Intelligent Cleaning Robot</span> 
+              <span className="text-electric-cyan"> — Coming Soon</span>
             </h1>
             
-            <p className="text-xl text-muted-foreground max-w-xl">
-              AI-powered autonomous cleaning robots built for apartments, offices, malls, and hospitals.
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl">
+              <strong className="text-foreground">Manual version launching soon</strong> • Autonomous AMR version in final-stage development
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a href="#raas">
-                <Button size="lg" className="group text-lg animate-pulse-slow">
-                  Explore RaaS Model
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <a href="/pilot-program">
+                <Button size="lg" className="text-lg px-8 bg-gradient-to-r from-primary to-teal-light hover:shadow-lg hover:shadow-primary/50 transition-all">
+                  Join Pilot Program
                 </Button>
               </a>
-              <a href="#technology">
-                <Button size="lg" variant="outline" className="text-lg">
-                  See It in Action
+              <a href="/contact">
+                <Button size="lg" variant="outline" className="text-lg px-8 border-primary/50 hover:bg-primary/10">
+                  Get Early Updates
                 </Button>
               </a>
             </div>
           </div>
           
-          <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-primary/20 blur-3xl" />
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,transparent_0%,hsl(var(--primary)/0.1)_50%,transparent_100%)] animate-pulse-slow" />
-            <img 
-              src={robotApartment} 
-              alt="UpDown Robot in apartment corridor" 
-              className="relative rounded-2xl shadow-2xl shadow-primary/20 animate-float"
-            />
-            <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-3/4 h-8 bg-primary/20 blur-2xl rounded-full" />
-            <div className="absolute bottom-8 left-8 right-8 bg-card/80 backdrop-blur-sm rounded-xl p-4 border border-primary/20">
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 bg-primary rounded-full animate-glow-pulse" />
-                <p className="text-sm font-medium">Autonomous Navigation Active</p>
+          <div className="relative animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full animate-pulse-slow" />
+            <div className="relative">
+              <img src={robotOffice} alt="UpDown Intelligent Cleaning Robot" className="relative rounded-2xl shadow-2xl" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] border-2 border-primary/30 rounded-full animate-glow-pulse pointer-events-none" />
+              <div className="absolute top-4 right-4 flex items-center gap-2 px-4 py-2 bg-card/80 backdrop-blur-sm border border-primary/30 rounded-full">
+                <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+                <span className="text-sm font-accent font-semibold text-primary">ACTIVE</span>
               </div>
             </div>
           </div>
         </div>
+
+        <div className="mt-24 text-center max-w-5xl mx-auto animate-fade-in" style={{ animationDelay: '0.4s' }}>
+          <div className="p-8 bg-card/50 backdrop-blur-sm border border-border rounded-2xl">
+            <Zap className="w-12 h-12 text-primary mx-auto mb-4" />
+            <p className="text-lg md:text-xl text-foreground leading-relaxed">
+              UpDown Robotics builds intelligent cleaning systems optimized for India's <strong className="text-primary">apartments, commercial buildings, malls, tech parks, hotels, and hospitals</strong>.
+            </p>
+          </div>
+        </div>
       </div>
-      
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
     </section>
   );
 };
