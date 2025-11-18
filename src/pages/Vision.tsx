@@ -65,41 +65,33 @@ const Vision = () => {
           {/* Vision Cards */}
           <div className="grid lg:grid-cols-2 gap-12 mb-24">
             <div className="relative overflow-hidden bg-card border border-border rounded-2xl p-8">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 blur-3xl" />
-              
-              <div className="relative z-10">
-                <Rocket className="w-12 h-12 text-primary mb-6" />
-                <h2 className="text-3xl font-heading font-bold mb-4">Our Vision</h2>
-                <p className="text-muted-foreground leading-relaxed mb-6">
-                  To become India's leading autonomous robotics company, transforming how 
-                  buildings are maintained. We envision a future where intelligent robots 
-                  handle repetitive tasks, allowing humans to focus on what matters most.
-                </p>
-                <img 
-                  src={robotApartment} 
-                  alt="Future Vision" 
-                  className="rounded-xl shadow-lg"
-                />
-              </div>
+              <Rocket className="w-12 h-12 text-primary mb-6" />
+              <h2 className="text-3xl font-heading font-bold mb-4">Our Vision</h2>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                To become India's leading autonomous robotics company, transforming how 
+                buildings are maintained. We envision a future where intelligent robots 
+                handle repetitive tasks, allowing humans to focus on what matters most.
+              </p>
+              <img 
+                src={robotApartment} 
+                alt="Future Vision" 
+                className="rounded-xl shadow-lg"
+              />
             </div>
 
             <div className="relative overflow-hidden bg-card border border-border rounded-2xl p-8">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-electric-cyan/10 blur-3xl" />
-              
-              <div className="relative z-10">
-                <Target className="w-12 h-12 text-electric-cyan mb-6" />
-                <h2 className="text-3xl font-heading font-bold mb-4">Delivery Add-On Evolution</h2>
-                <p className="text-muted-foreground leading-relaxed mb-6">
-                  Beyond cleaning, we're developing modular add-ons for last-mile delivery, 
-                  security patrols, and facility inspections—making our robots the Swiss Army 
-                  knife of building operations.
-                </p>
-                <img 
-                  src={robotDelivery} 
-                  alt="Delivery Evolution" 
-                  className="rounded-xl shadow-lg"
-                />
-              </div>
+              <Target className="w-12 h-12 text-electric-cyan mb-6" />
+              <h2 className="text-3xl font-heading font-bold mb-4">Delivery Add-On Evolution</h2>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                Beyond cleaning, we're developing modular add-ons for last-mile delivery, 
+                security patrols, and facility inspections—making our robots the Swiss Army 
+                knife of building operations.
+              </p>
+              <img 
+                src={robotDelivery} 
+                alt="Delivery Evolution" 
+                className="rounded-xl shadow-lg"
+              />
             </div>
           </div>
 
