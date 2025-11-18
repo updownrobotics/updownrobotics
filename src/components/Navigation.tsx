@@ -58,7 +58,7 @@ export const Navigation = () => {
       )}
     >
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           <Link 
             to="/" 
             onClick={(e) => {
@@ -72,7 +72,7 @@ export const Navigation = () => {
             <img 
               src={logo} 
               alt="UpDown Robotics Logo" 
-              className="h-16 w-auto transition-all duration-300 group-hover:drop-shadow-[0_0_15px_rgba(0,229,255,0.6)]" 
+              className="h-20 w-auto transition-all duration-300 group-hover:drop-shadow-[0_0_20px_rgba(0,229,255,0.8)]" 
             />
           </Link>
           

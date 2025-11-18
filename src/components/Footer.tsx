@@ -10,7 +10,7 @@ export const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-4">
-              <img src={logo} alt="UpDown Robotics Logo" className="h-10 w-auto" />
+              <img src={logo} alt="UpDown Robotics Logo" className="h-16 w-auto" />
               <h3 className="text-2xl font-bold">
                 <span className="text-primary">UpDown</span> Robotics
               </h3>
