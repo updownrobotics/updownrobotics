@@ -8,45 +8,50 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 210 20% 8%;
+    /* New Branding Colors */
+    --background: 0 0% 4%;
     --foreground: 0 0% 98%;
 
-    --card: 210 18% 12%;
+    --card: 0 0% 8%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 210 18% 12%;
+    --popover: 0 0% 8%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 175 50% 45%;
+    --primary: 175 82% 31%;
     --primary-foreground: 0 0% 98%;
 
-    --secondary: 210 6% 77%;
-    --secondary-foreground: 210 20% 8%;
+    --secondary: 0 0% 77%;
+    --secondary-foreground: 0 0% 4%;
 
-    --muted: 210 15% 20%;
+    --muted: 0 0% 15%;
     --muted-foreground: 0 0% 70%;
 
-    --accent: 175 50% 45%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 189 100% 50%;
+    --accent-foreground: 0 0% 4%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 210 15% 20%;
-    --input: 210 15% 20%;
-    --ring: 175 50% 45%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 175 82% 31%;
 
     --radius: 0.75rem;
 
-    --teal: 175 50% 45%;
-    --teal-dark: 175 50% 35%;
-    --teal-light: 175 50% 55%;
-    --matte-silver: 210 6% 77%;
-    --graphite: 210 20% 8%;
-    --graphite-light: 210 18% 12%;
+    /* Brand Specific Colors */
+    --teal: 175 82% 31%;
+    --teal-dark: 175 82% 25%;
+    --teal-light: 175 82% 40%;
+    --electric-cyan: 189 100% 50%;
+    --matte-silver: 0 0% 77%;
+    --graphite: 0 0% 4%;
+    --graphite-light: 0 0% 8%;
     
-    --glow-teal: 0 0 30px hsla(175, 50%, 45%, 0.5);
-    --gradient-teal: linear-gradient(135deg, hsl(175 50% 35%), hsl(175 50% 55%));
+    --glow-teal: 0 0 30px hsla(175, 82%, 31%, 0.6);
+    --glow-cyan: 0 0 40px hsla(189, 100%, 50%, 0.5);
+    --gradient-teal: linear-gradient(135deg, hsl(175 82% 25%), hsl(175 82% 40%));
+    --gradient-cyan: linear-gradient(135deg, hsl(189 100% 50%), hsl(175 82% 31%));
   }
 }
 
@@ -60,8 +65,12 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-poppins;
     cursor: url('/logo.png') 16 16, auto;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-montserrat;
   }
   
   * {
