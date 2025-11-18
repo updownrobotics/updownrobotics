@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { CheckCircle, Zap, Brain, Shield, Gauge, AlertCircle } from "lucide-react";
 import robotOffice from "@/assets/robot-office.png";
 import robotMall from "@/assets/robot-mall.png";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const version1Features = [
   { icon: Zap, text: "5-stage cleaning: sweep, scrub, mop, dry, disinfect" },
@@ -20,6 +21,10 @@ const version2Features = [
 ];
 
 const Products = () => {
+  const version1Reveal = useScrollReveal();
+  const version2Reveal = useScrollReveal();
+  const disclaimerReveal = useScrollReveal();
+  
   return (
     <main className="min-h-screen bg-gradient-to-b from-deep-black to-background">
       <Navigation />
@@ -36,7 +41,7 @@ const Products = () => {
           </div>
 
           {/* Version 1 - Manual Robot */}
-          <div className="mb-32">
+          <div ref={version1Reveal.ref} className={`mb-32 transition-all duration-700 ${version1Reveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="order-2 lg:order-1 space-y-6">
                 <div className="inline-block px-4 py-2 bg-primary/10 border border-primary/30 rounded-full">
@@ -80,7 +85,7 @@ const Products = () => {
           </div>
 
           {/* Version 2 - Autonomous Robot */}
-          <div>
+          <div ref={version2Reveal.ref} className={`transition-all duration-700 ${version2Reveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="relative">
                 <img 
