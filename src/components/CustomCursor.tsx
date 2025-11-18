@@ -48,17 +48,17 @@ export const CustomCursor = () => {
 
   return (
     <div
-      className="pointer-events-none fixed z-[9999] transition-transform duration-200 ease-out"
+      className={`pointer-events-none fixed z-[9999] transition-opacity duration-200 ease-out ${isHovering ? 'opacity-0' : 'opacity-100'}`}
       style={{
         left: `${position.x}px`,
         top: `${position.y}px`,
-        transform: `translate(-50%, -50%) scale(${isHovering ? 1.5 : 1})`,
+        transform: `translate(-50%, -50%)`,
       }}
     >
       <img
         src="/cursor.png"
         alt="cursor"
-        className="w-3 h-3"
+        className="w-12 h-12"
         draggable={false}
       />
     </div>
