@@ -57,8 +57,8 @@ export const Navigation = () => {
         scrolled ? "bg-background/80 backdrop-blur-md shadow-[0_0_30px_rgba(0,178,255,0.3)]" : "bg-background"
       )}
     >
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+      <div className="container mx-auto px-phi-3">
+        <div className="flex items-center justify-between h-phi-6">
           <Link 
             to="/" 
             onClick={(e) => {
@@ -72,18 +72,18 @@ export const Navigation = () => {
             <img 
               src={logo} 
               alt="UpDown Robotics Logo" 
-              className="h-20 w-auto transition-all duration-300 animate-float-glow group-hover:drop-shadow-[0_0_30px_rgba(0,229,255,1)]" 
+              className="h-phi-6 w-auto transition-all duration-300 animate-float-glow group-hover:drop-shadow-[0_0_30px_rgba(0,229,255,1)]" 
             />
           </Link>
           
-          <div className="hidden lg:flex items-center space-x-1">
+          <div className="hidden lg:flex items-center space-x-phi-1">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 to={item.path}
                 onClick={(e) => handleNavClick(e, item.path)}
                 className={cn(
-                  "px-4 py-2 text-sm font-medium transition-all duration-300 relative group",
+                  "px-phi-3 py-phi-2 text-phi-sm font-medium transition-all duration-300 relative group",
                   isActive(item.path) 
                     ? "text-primary" 
                     : "text-muted-foreground hover:text-primary"

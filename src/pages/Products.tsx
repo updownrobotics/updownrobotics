@@ -29,46 +29,46 @@ const Products = () => {
     <main className="min-h-screen bg-gradient-to-b from-deep-black to-background">
       <Navigation />
       
-      <section className="pt-32 pb-16 px-6">
-        <div className="container mx-auto">
-          <div className="text-center mb-16 animate-fade-in">
-            <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6">
+      <section className="pt-phi-8 pb-phi-6 px-phi-4">
+        <div className="container mx-auto max-w-phi-content">
+          <div className="text-center mb-phi-6 animate-fade-in">
+            <h1 className="text-phi-5xl md:text-phi-7xl font-heading font-bold mb-phi-4">
               Next-Generation <span className="gradient-heading">Cleaning Robots</span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-phi-xl text-muted-foreground max-w-phi-content mx-auto">
               Two revolutionary products designed for India's commercial and residential spaces
             </p>
           </div>
 
           {/* Version 1 - Manual Robot */}
-          <div ref={version1Reveal.ref} className={`mb-32 transition-all duration-700 ${version1Reveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="order-2 lg:order-1 space-y-6">
-                <div className="inline-block px-4 py-2 bg-primary/10 border border-primary/30 rounded-full">
-                  <span className="text-primary font-accent font-semibold">LAUNCHING SOON</span>
+          <div ref={version1Reveal.ref} className={`mb-phi-8 transition-all duration-700 ${version1Reveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <div className="grid lg:grid-cols-2 gap-phi-5 items-center">
+              <div className="order-2 lg:order-1 space-y-phi-4">
+                <div className="inline-block px-phi-3 py-phi-2 bg-primary/10 border border-primary/30 rounded-full">
+                  <span className="text-primary font-accent font-semibold text-phi-sm">LAUNCHING SOON</span>
                 </div>
                 
-                <h2 className="text-4xl md:text-5xl font-heading font-bold">
+                <h2 className="text-phi-4xl md:text-phi-5xl font-heading font-bold">
                   5-in-1 Smart Cleaning Robot
                 </h2>
                 
-                <p className="text-lg text-muted-foreground">
+                <p className="text-phi-lg text-muted-foreground">
                   Our fully powered manual cleaning robot brings industrial-grade cleaning power 
                   to apartments, offices, and commercial spaces. Five integrated cleaning stages 
                   deliver spotless results with unmatched efficiency.
                 </p>
 
-                <div className="space-y-4">
+                <div className="space-y-phi-3">
                   {version1Features.map((feature, index) => (
-                    <div key={index} className="flex items-start gap-3">
-                      <feature.icon className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
-                      <p className="text-foreground">{feature.text}</p>
+                    <div key={index} className="flex items-start gap-phi-2">
+                      <feature.icon className="w-phi-4 h-phi-4 text-primary mt-1 flex-shrink-0" />
+                      <p className="text-foreground text-phi-base">{feature.text}</p>
                     </div>
                   ))}
                 </div>
 
-                <div className="pt-6">
-                  <Button size="lg" className="bg-gradient-to-r from-primary to-teal-light hover:shadow-lg hover:shadow-primary/50 transition-all">
+                <div className="pt-phi-4">
+                  <Button size="lg" className="bg-gradient-to-r from-primary to-teal-light hover:shadow-lg hover:shadow-primary/50 transition-all text-phi-base px-phi-5">
                     Pre-Register for Launch
                   </Button>
                 </div>
@@ -86,7 +86,7 @@ const Products = () => {
 
           {/* Version 2 - Autonomous Robot */}
           <div ref={version2Reveal.ref} className={`transition-all duration-700 ${version2Reveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="grid lg:grid-cols-2 gap-phi-5 items-center">
               <div className="relative">
                 <img 
                   src={robotMall} 
@@ -95,36 +95,32 @@ const Products = () => {
                 />
               </div>
 
-              <div className="space-y-6">
-                <div className="inline-block px-4 py-2 bg-electric-cyan/10 border border-electric-cyan/30 rounded-full">
-                  <span className="text-electric-cyan font-accent font-semibold">FINAL-STAGE R&D</span>
+              <div className="space-y-phi-4">
+                <div className="inline-block px-phi-3 py-phi-2 bg-accent/10 border border-accent/30 rounded-full">
+                  <span className="text-accent font-accent font-semibold text-phi-sm">FINAL-STAGE R&D</span>
                 </div>
                 
-                <h2 className="text-4xl md:text-5xl font-heading font-bold">
+                <h2 className="text-phi-4xl md:text-phi-5xl font-heading font-bold">
                   Autonomous Cleaning Robot
                 </h2>
                 
-                <p className="text-lg text-muted-foreground">
-                  Our AMR-based autonomous robot represents the future of facility management. 
-                  Built on validated navigation technology, it operates independently across 
-                  multiple floors with zero human intervention.
+                <p className="text-phi-lg text-muted-foreground">
+                  Our cutting-edge autonomous robot leverages validated AMR technology with 
+                  advanced SLAM navigation, obstacle detection, and multi-floor intelligence. 
+                  The future of hands-free cleaning.
                 </p>
 
-                <div className="space-y-4">
+                <div className="space-y-phi-3">
                   {version2Features.map((feature, index) => (
-                    <div key={index} className="flex items-start gap-3">
-                      <feature.icon className="w-6 h-6 text-electric-cyan mt-1 flex-shrink-0" />
-                      <p className="text-foreground">{feature.text}</p>
+                    <div key={index} className="flex items-start gap-phi-2">
+                      <feature.icon className="w-phi-4 h-phi-4 text-accent mt-1 flex-shrink-0" />
+                      <p className="text-foreground text-phi-base">{feature.text}</p>
                     </div>
                   ))}
                 </div>
 
-                <div className="pt-6">
-                  <Button 
-                    size="lg" 
-                    variant="outline"
-                    className="border-electric-cyan/50 text-electric-cyan hover:bg-electric-cyan/10"
-                  >
+                <div className="pt-phi-4">
+                  <Button size="lg" variant="outline" className="border-accent/50 hover:bg-accent/10 hover:text-accent transition-all text-phi-base px-phi-5">
                     Apply for Early Access Pilot
                   </Button>
                 </div>
@@ -133,11 +129,13 @@ const Products = () => {
           </div>
 
           {/* Disclaimer */}
-          <div className="mt-16 p-6 bg-card/50 border border-border rounded-xl flex items-start gap-3">
-            <AlertCircle className="w-5 h-5 text-muted-foreground mt-0.5 flex-shrink-0" />
-            <p className="text-sm text-muted-foreground">
-              All product visuals are R&D concepts and not final hardware.
-            </p>
+          <div ref={disclaimerReveal.ref} className={`mt-phi-7 transition-all duration-700 ${disclaimerReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <div className="flex items-center justify-center gap-phi-2 p-phi-4 bg-muted/20 border border-border rounded-lg">
+              <AlertCircle className="w-phi-4 h-phi-4 text-muted-foreground flex-shrink-0" />
+              <p className="text-phi-sm text-muted-foreground italic text-center">
+                All product visuals are R&D concepts and not final hardware.
+              </p>
+            </div>
           </div>
         </div>
       </section>
