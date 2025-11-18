@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Rocket, Target, TrendingUp, Zap } from "lucide-react";
 import robotDelivery from "@/assets/robot-delivery.png";
 import robotApartment from "@/assets/robot-apartment.png";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const timeline = [
   {
@@ -45,6 +46,10 @@ const timeline = [
 ];
 
 const Vision = () => {
+  const visionCardsReveal = useScrollReveal();
+  const timelineReveal = useScrollReveal();
+  const ctaReveal = useScrollReveal();
+  
   return (
     <main className="min-h-screen bg-gradient-to-b from-deep-black to-background">
       <Navigation />
@@ -63,7 +68,7 @@ const Vision = () => {
           </div>
 
           {/* Vision Cards */}
-          <div className="grid lg:grid-cols-2 gap-12 mb-24">
+          <div ref={visionCardsReveal.ref} className={`grid lg:grid-cols-2 gap-12 mb-24 transition-all duration-700 ${visionCardsReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="relative overflow-hidden bg-card border border-border rounded-2xl p-8">
               <Rocket className="w-12 h-12 text-primary mb-6" />
               <h2 className="text-3xl font-heading font-bold mb-4">Our Vision</h2>
@@ -96,7 +101,7 @@ const Vision = () => {
           </div>
 
           {/* Timeline */}
-          <div className="mb-24">
+          <div ref={timelineReveal.ref} className={`mb-24 transition-all duration-700 ${timelineReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <h2 className="text-4xl font-heading font-bold text-center mb-16">
               Our <span className="text-primary">Roadmap</span>
             </h2>

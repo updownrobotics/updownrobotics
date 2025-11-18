@@ -4,8 +4,12 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, MapPin, Phone, MessageSquare } from "lucide-react";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const Contact = () => {
+  const formReveal = useScrollReveal();
+  const contactInfoReveal = useScrollReveal();
+  
   const contactTypes = [
     { icon: MessageSquare, title: "Sales", desc: "Explore RaaS pricing and deployment", email: "sales@updownrobotics.com" },
     { icon: Mail, title: "Investors", desc: "Partnership and funding inquiries", email: "invest@updownrobotics.com" },
@@ -32,7 +36,7 @@ const Contact = () => {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
             {/* Contact Form */}
-            <div className="animate-fade-in">
+            <div ref={formReveal.ref} className={`transition-all duration-700 ${formReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               <div className="bg-card p-8 rounded-lg border border-border shadow-[0_0_30px_rgba(0,178,255,0.1)]">
                 <h2 className="text-2xl font-bold text-foreground mb-6">Send us a Message</h2>
                 <form className="space-y-6">
@@ -78,7 +82,7 @@ const Contact = () => {
             </div>
 
             {/* Contact Info */}
-            <div className="space-y-6">
+            <div ref={contactInfoReveal.ref} className={`space-y-6 transition-all duration-700 ${contactInfoReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               {/* Headquarters */}
               <div className="bg-card p-8 rounded-lg border border-border shadow-[0_0_30px_rgba(0,178,255,0.1)] animate-fade-in">
                 <div className="flex items-start space-x-4 mb-6">

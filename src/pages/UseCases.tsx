@@ -1,6 +1,7 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Building2, Home, Hospital, Hotel, ShoppingBag, Plane, Briefcase, Cpu } from "lucide-react";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const useCases = [
   {
@@ -54,6 +55,9 @@ const useCases = [
 ];
 
 const UseCases = () => {
+  const gridReveal = useScrollReveal();
+  const ctaReveal = useScrollReveal();
+  
   return (
     <main className="min-h-screen bg-gradient-to-b from-deep-black to-background">
       <Navigation />
@@ -70,7 +74,7 @@ const UseCases = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div ref={gridReveal.ref} className={`grid md:grid-cols-2 lg:grid-cols-4 gap-6 transition-all duration-700 ${gridReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             {useCases.map((useCase, index) => (
               <div
                 key={index}
@@ -97,7 +101,7 @@ const UseCases = () => {
             ))}
           </div>
 
-          <div className="mt-20 text-center">
+          <div ref={ctaReveal.ref} className={`mt-20 text-center transition-all duration-700 ${ctaReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="inline-block p-8 bg-gradient-to-br from-card to-card/50 border border-border rounded-2xl">
               <h2 className="text-3xl font-heading font-bold mb-4">
                 Not sure if we're right for your space?

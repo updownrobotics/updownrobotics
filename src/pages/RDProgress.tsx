@@ -2,6 +2,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Map, Brain, Droplet, Gauge, CheckCircle2, Code2, Cpu } from "lucide-react";
 import robotCorridor from "@/assets/robot-corridor.png";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const navigationFeatures = [
   { icon: Map, title: "SLAM Mapping", status: "Validated" },
@@ -26,6 +27,10 @@ const engineeringStack = [
 ];
 
 const RDProgress = () => {
+  const navPlatformReveal = useScrollReveal();
+  const cleaningModulesReveal = useScrollReveal();
+  const engineeringReveal = useScrollReveal();
+  
   return (
     <main className="min-h-screen bg-gradient-to-b from-deep-black to-background">
       <Navigation />
@@ -49,7 +54,7 @@ const RDProgress = () => {
           </div>
 
           {/* Navigation Platform */}
-          <div className="mb-24">
+          <div ref={navPlatformReveal.ref} className={`mb-24 transition-all duration-700 ${navPlatformReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-4xl font-heading font-bold mb-6">
@@ -88,7 +93,7 @@ const RDProgress = () => {
           </div>
 
           {/* Cleaning Module R&D */}
-          <div className="mb-24">
+          <div ref={cleaningModulesReveal.ref} className={`mb-24 transition-all duration-700 ${cleaningModulesReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <h2 className="text-4xl font-heading font-bold text-center mb-12">
               Cleaning Module <span className="text-electric-cyan">R&D</span>
             </h2>
@@ -113,7 +118,7 @@ const RDProgress = () => {
           </div>
 
           {/* Engineering Stack */}
-          <div>
+          <div ref={engineeringReveal.ref} className={`transition-all duration-700 ${engineeringReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <h2 className="text-4xl font-heading font-bold text-center mb-12">
               Engineering & <span className="text-primary">Software Stack</span>
             </h2>
