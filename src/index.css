@@ -64,15 +64,14 @@
   body {
     @apply bg-background text-foreground;
     font-family: 'Poppins', sans-serif;
-    cursor: url('/logo.png') 16 16, auto;
   }
   
   * {
-    cursor: url('/logo.png') 16 16, auto;
+    cursor: default;
   }
   
   a, button {
-    cursor: url('/logo.png') 16 16, pointer;
+    cursor: pointer;
   }
 
   h1, h2, h3, h4, h5, h6 {
