@@ -9,8 +9,8 @@ export const Hero = () => {
   const imageOffset = useParallax(0.5);
   
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden bg-gradient-to-b from-deep-black via-background to-background">
-      <div className="absolute inset-0 overflow-hidden" style={{ transform: `translateY(${bgOffset}px)` }}>
+    <section className="relative min-h-screen flex items-center justify-center px-6 py-24 bg-gradient-to-b from-deep-black via-background to-background">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none" style={{ transform: `translateY(${bgOffset}px)` }}>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_hsl(var(--primary)/0.15),transparent_50%)]" />
       </div>
       
@@ -44,9 +44,9 @@ export const Hero = () => {
             </div>
           </div>
           
-          <div className="relative animate-fade-in max-w-4xl mx-auto" style={{ animationDelay: '0.2s', transform: `translateY(${imageOffset}px)` }}>
+          <div className="relative animate-fade-in max-w-4xl mx-auto" style={{ animationDelay: '0.2s' }}>
             <div className="relative">
-              <img src={robotOffice} alt="UpDown Intelligent Cleaning Robot" className="relative rounded-2xl shadow-2xl" />
+              <img src={robotOffice} alt="UpDown Intelligent Cleaning Robot" className="w-full h-auto rounded-2xl shadow-2xl shadow-primary/20" />
               <div className="absolute top-4 right-4 flex items-center gap-2 px-4 py-2 bg-card/80 backdrop-blur-sm border border-primary/30 rounded-full">
                 <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
                 <span className="text-sm font-accent font-semibold text-primary">ACTIVE</span>
