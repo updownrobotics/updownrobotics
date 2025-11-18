@@ -1,7 +1,6 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Brain, Map, Droplet, Zap, Gauge, Cpu, Radio } from "lucide-react";
-import robotOffice from "@/assets/robot-office.png";
 
 const technologies = [
   {
@@ -51,19 +50,6 @@ const Technology = () => {
               Cutting-edge robotics, AI, and mechanical engineering converge to create 
               India's most advanced cleaning solution
             </p>
-          </div>
-
-          {/* Hero Image Section */}
-          <div className="mb-24 relative">
-            <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full" />
-            <img 
-              src={robotOffice} 
-              alt="UpDown Robot Technology" 
-              className="relative rounded-2xl shadow-2xl mx-auto max-w-4xl w-full"
-            />
-            
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 border-2 border-primary/30 rounded-full animate-glow-pulse" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 border-2 border-primary/20 rounded-full animate-glow-pulse" style={{ animationDelay: "0.5s" }} />
           </div>
 
           {/* Technology Grid */}
