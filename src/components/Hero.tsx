@@ -9,7 +9,7 @@ export const Hero = () => {
   const imageOffset = useParallax(0.5);
   
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-6 py-24 bg-gradient-to-b from-deep-black via-background to-background">
+    <section className="relative min-h-screen flex items-center justify-center px-6 pt-24 pb-32 bg-gradient-to-b from-deep-black via-background to-background">
       <div className="absolute inset-0 overflow-hidden pointer-events-none" style={{ transform: `translateY(${bgOffset}px)` }}>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_hsl(var(--primary)/0.15),transparent_50%)]" />
       </div>
@@ -55,7 +55,7 @@ export const Hero = () => {
           </div>
         </div>
 
-        <div className="mt-24 text-center max-w-5xl mx-auto animate-fade-in" style={{ animationDelay: '0.4s' }}>
+        <div className="mt-32 mb-16 text-center max-w-5xl mx-auto animate-fade-in" style={{ animationDelay: '0.4s' }}>
           <div className="p-8 bg-card/50 backdrop-blur-sm border border-border rounded-2xl">
             <Zap className="w-12 h-12 text-primary mx-auto mb-4" />
             <p className="text-lg md:text-xl text-foreground leading-relaxed">
