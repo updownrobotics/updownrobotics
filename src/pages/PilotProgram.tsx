@@ -67,7 +67,7 @@ const PilotProgram = () => {
             </div>
             
             <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6">
-              Join Our <span className="text-primary">Early Pilot Program</span>
+              Join Our <span className="gradient-heading">Early Pilot Program</span>
             </h1>
             
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">

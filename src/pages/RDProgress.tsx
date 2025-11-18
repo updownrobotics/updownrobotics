@@ -44,7 +44,7 @@ const RDProgress = () => {
             </div>
             
             <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6">
-              UpDown Robotics <span className="text-primary">R&D Progress</span>
+              UpDown Robotics <span className="gradient-heading">R&D Progress</span>
             </h1>
             
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">

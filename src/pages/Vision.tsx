@@ -59,7 +59,7 @@ const Vision = () => {
           {/* Hero */}
           <div className="text-center mb-16 animate-fade-in">
             <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6">
-              Building India's <span className="text-primary">Autonomous Cleaning Future</span>
+              Building India's <span className="gradient-heading">Autonomous Cleaning Future</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               From intelligent cleaning robots to fully autonomous building operations—

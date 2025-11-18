@@ -66,7 +66,7 @@ const UseCases = () => {
         <div className="container mx-auto">
           <div className="text-center mb-16 animate-fade-in">
             <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6">
-              Built for <span className="text-primary">Every Space</span>
+              Built for <span className="gradient-heading">Every Space</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Our intelligent cleaning robots adapt to diverse environments across 

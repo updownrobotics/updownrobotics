@@ -27,7 +27,7 @@ const About = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 animate-fade-in">
               <h1 className="text-5xl font-bold text-foreground">
-                About <span className="text-primary">UpDown Robotics</span>
+                About <span className="gradient-heading">UpDown Robotics</span>
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed">
                 Founded in India. Built for the world. UpDown Robotics is redefining urban hygiene through AI autonomy.
