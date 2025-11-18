@@ -2,8 +2,14 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import robotOffice from "@/assets/robot-office.png";
 import { Lightbulb, Wrench, Rocket, Trophy } from "lucide-react";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const About = () => {
+  const heroReveal = useScrollReveal();
+  const missionReveal = useScrollReveal();
+  const timelineReveal = useScrollReveal();
+  const foundersReveal = useScrollReveal();
+  
   const timeline = [
     { icon: Lightbulb, title: "Idea", year: "2023", desc: "Vision to automate urban hygiene" },
     { icon: Wrench, title: "Prototype", year: "2024", desc: "First AI-powered cleaning robot" },
@@ -17,7 +23,7 @@ const About = () => {
       
       <main className="pt-24 pb-16">
         {/* Hero Section */}
-        <section className="container mx-auto px-4 mb-20">
+        <section ref={heroReveal.ref} className={`container mx-auto px-4 mb-20 transition-all duration-700 ${heroReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 animate-fade-in">
               <h1 className="text-5xl font-bold text-foreground">
@@ -41,8 +47,8 @@ const About = () => {
         </section>
 
         {/* Mission Section */}
-        <section className="container mx-auto px-4 mb-20">
-          <div className="text-center max-w-3xl mx-auto space-y-4 animate-fade-in">
+        <section ref={missionReveal.ref} className={`container mx-auto px-4 mb-20 transition-all duration-700 ${missionReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div className="text-center max-w-3xl mx-auto space-y-4">
             <h2 className="text-4xl font-bold text-foreground">Our Mission</h2>
             <p className="text-2xl text-primary font-semibold">Clean Smarter. Live Better.</p>
             <p className="text-lg text-muted-foreground">
@@ -52,7 +58,7 @@ const About = () => {
         </section>
 
         {/* Timeline Section */}
-        <section className="container mx-auto px-4 mb-20">
+        <section ref={timelineReveal.ref} className={`container mx-auto px-4 mb-20 transition-all duration-700 ${timelineReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h2 className="text-3xl font-bold text-center mb-12 text-foreground">Our Journey</h2>
           <div className="grid md:grid-cols-4 gap-8">
             {timeline.map((item, index) => (
@@ -76,7 +82,7 @@ const About = () => {
         </section>
 
         {/* Founders Section */}
-        <section className="container mx-auto px-4">
+        <section ref={foundersReveal.ref} className={`container mx-auto px-4 transition-all duration-700 ${foundersReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h2 className="text-3xl font-bold text-center mb-12 text-foreground">Leadership Team</h2>
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             {[

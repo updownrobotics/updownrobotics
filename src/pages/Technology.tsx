@@ -2,6 +2,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Brain, Map, Droplet, Zap, Gauge, Cpu, Radio } from "lucide-react";
 import robotOffice from "@/assets/robot-office.png";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const technologies = [
   {
@@ -37,6 +38,10 @@ const technologies = [
 ];
 
 const Technology = () => {
+  const heroImageReveal = useScrollReveal();
+  const techGridReveal = useScrollReveal();
+  const specsReveal = useScrollReveal();
+  
   return (
     <main className="min-h-screen bg-gradient-to-b from-deep-black to-background">
       <Navigation />
@@ -54,7 +59,7 @@ const Technology = () => {
           </div>
 
           {/* Hero Image Section */}
-          <div className="mb-24 relative">
+          <div ref={heroImageReveal.ref} className={`mb-24 relative transition-all duration-700 ${heroImageReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full" />
             <img 
               src={robotOffice} 
@@ -67,7 +72,7 @@ const Technology = () => {
           </div>
 
           {/* Technology Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div ref={techGridReveal.ref} className={`grid md:grid-cols-2 lg:grid-cols-3 gap-8 transition-all duration-700 ${techGridReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             {technologies.map((tech, index) => (
               <div
                 key={index}
@@ -86,7 +91,7 @@ const Technology = () => {
           </div>
 
           {/* Technical Specs */}
-          <div className="mt-24 grid lg:grid-cols-2 gap-12">
+          <div ref={specsReveal.ref} className={`mt-24 grid lg:grid-cols-2 gap-12 transition-all duration-700 ${specsReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="p-8 bg-gradient-to-br from-card to-card/50 border border-border rounded-2xl">
               <h2 className="text-3xl font-heading font-bold mb-6">
                 Navigation <span className="text-primary">Precision</span>
