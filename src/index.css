@@ -90,15 +90,6 @@
   body {
     @apply bg-background text-foreground;
     font-family: 'Poppins', sans-serif;
-    cursor: none;
-  }
-  
-  * {
-    cursor: none;
-  }
-  
-  a, button {
-    cursor: pointer !important;
   }
 
   h1, h2, h3, h4, h5, h6 {
