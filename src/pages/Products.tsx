@@ -33,7 +33,7 @@ const Products = () => {
         <div className="container mx-auto">
           <div className="text-center mb-16 animate-fade-in">
             <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6">
-              Next-Generation <span className="text-primary">Cleaning Robots</span>
+              Next-Generation <span className="gradient-heading">Cleaning Robots</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Two revolutionary products designed for India's commercial and residential spaces

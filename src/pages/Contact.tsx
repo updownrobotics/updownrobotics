@@ -25,7 +25,7 @@ const Contact = () => {
         <section className="container mx-auto px-4 mb-20 text-center">
           <div className="max-w-3xl mx-auto space-y-6 animate-fade-in">
             <h1 className="text-5xl font-bold text-foreground">
-              Contact & <span className="text-primary">Support</span>
+              Contact & <span className="gradient-heading">Support</span>
             </h1>
             <p className="text-xl text-muted-foreground">
               Get in touch with our team to learn more about UpDown Robotics and how we can help automate your facility maintenance.

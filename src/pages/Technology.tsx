@@ -50,7 +50,7 @@ const Technology = () => {
         <div className="container mx-auto">
           <div className="text-center mb-16 animate-fade-in">
             <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6">
-              The Technology Behind <span className="text-primary">Intelligent Cleaning</span>
+              The Technology Behind <span className="gradient-heading">Intelligent Cleaning</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Cutting-edge robotics, AI, and mechanical engineering converge to create 

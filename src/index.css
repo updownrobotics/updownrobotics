@@ -84,6 +84,18 @@
   .hover-glow {
     @apply transition-all duration-300 hover:shadow-lg hover:shadow-primary/30;
   }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary via-electric-cyan to-teal-light bg-clip-text text-transparent;
+  }
+  
+  .gradient-text-subtle {
+    @apply bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent;
+  }
+  
+  .gradient-heading {
+    @apply bg-gradient-to-br from-primary to-electric-cyan bg-clip-text text-transparent;
+  }
 }
 
 @layer base {

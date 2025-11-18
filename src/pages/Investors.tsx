@@ -42,7 +42,7 @@ const Investors = () => {
           {/* Hero */}
           <div className="text-center mb-16 animate-fade-in">
             <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6">
-              Interested in Investing in India's <span className="text-primary">Robotics Future?</span>
+              Interested in Investing in India's <span className="gradient-heading">Robotics Future?</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               UpDown Robotics is building India's first intelligent indoor cleaning AMR platform. 

@@ -22,7 +22,7 @@ export const Hero = () => {
             </div>
             
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-bold leading-tight">
-              India's First 5-in-1 <span className="text-primary">Intelligent Cleaning Robot</span> 
+              India's First 5-in-1 <span className="gradient-heading">Intelligent Cleaning Robot</span> 
               <span className="text-electric-cyan"> — Coming Soon</span>
             </h1>
             
