@@ -13,6 +13,32 @@ export default {
       },
     },
     extend: {
+      spacing: {
+        // Golden Ratio Spacing Scale (Fibonacci sequence)
+        'phi-1': '0.5rem',    // 8px
+        'phi-2': '0.8125rem', // 13px
+        'phi-3': '1.3125rem', // 21px
+        'phi-4': '2.125rem',  // 34px
+        'phi-5': '3.4375rem', // 55px
+        'phi-6': '5.5625rem', // 89px
+        'phi-7': '9rem',      // 144px
+        'phi-8': '14.5625rem', // 233px
+        'phi-9': '23.5625rem', // 377px
+      },
+      fontSize: {
+        // Golden Ratio Typography Scale (base 16px)
+        'phi-xs': ['0.625rem', { lineHeight: '1rem' }],      // 10px
+        'phi-sm': ['0.8125rem', { lineHeight: '1.3125rem' }], // 13px
+        'phi-base': ['1rem', { lineHeight: '1.618rem' }],     // 16px
+        'phi-lg': ['1.25rem', { lineHeight: '2rem' }],        // 20px
+        'phi-xl': ['1.618rem', { lineHeight: '2.618rem' }],   // 26px
+        'phi-2xl': ['2.125rem', { lineHeight: '3.4375rem' }], // 34px
+        'phi-3xl': ['2.618rem', { lineHeight: '4.236rem' }],  // 42px
+        'phi-4xl': ['3.4375rem', { lineHeight: '5.5625rem' }], // 55px
+        'phi-5xl': ['4.236rem', { lineHeight: '6.854rem' }],  // 68px
+        'phi-6xl': ['5.5625rem', { lineHeight: '9rem' }],     // 89px
+        'phi-7xl': ['6.854rem', { lineHeight: '11.09rem' }],  // 110px
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -53,6 +79,12 @@ export default {
         silver: "hsl(var(--silver))",
         "electric-cyan": "hsl(var(--electric-cyan))",
         "deep-black": "hsl(var(--deep-black))",
+      },
+      maxWidth: {
+        // Golden Ratio Layout Widths
+        'phi-narrow': '38.2%',   // 0.382 (smaller portion)
+        'phi-wide': '61.8%',     // 0.618 (larger portion)
+        'phi-content': '61.8rem', // 989px
       },
       fontFamily: {
         sans: ['Poppins', 'sans-serif'],

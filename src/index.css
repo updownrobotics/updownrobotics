@@ -49,6 +49,35 @@
     --glow-cyan: 0 0 30px hsla(189, 100%, 50%, 0.5);
     --gradient-teal: linear-gradient(135deg, hsl(175 70% 29%), hsl(175 70% 45%));
     --gradient-dark: linear-gradient(180deg, hsl(0 0% 4%), hsl(0 0% 8%));
+
+    /* Golden Ratio Design System */
+    --phi: 1.618;
+    --phi-inverse: 0.618;
+    
+    /* Golden Ratio Spacing (Fibonacci) */
+    --space-phi-1: 0.5rem;      /* 8px */
+    --space-phi-2: 0.8125rem;   /* 13px */
+    --space-phi-3: 1.3125rem;   /* 21px */
+    --space-phi-4: 2.125rem;    /* 34px */
+    --space-phi-5: 3.4375rem;   /* 55px */
+    --space-phi-6: 5.5625rem;   /* 89px */
+    --space-phi-7: 9rem;        /* 144px */
+    
+    /* Golden Ratio Typography */
+    --text-phi-xs: 0.625rem;    /* 10px */
+    --text-phi-sm: 0.8125rem;   /* 13px */
+    --text-phi-base: 1rem;      /* 16px */
+    --text-phi-lg: 1.25rem;     /* 20px */
+    --text-phi-xl: 1.618rem;    /* 26px */
+    --text-phi-2xl: 2.125rem;   /* 34px */
+    --text-phi-3xl: 2.618rem;   /* 42px */
+    --text-phi-4xl: 3.4375rem;  /* 55px */
+    --text-phi-5xl: 4.236rem;   /* 68px */
+    --text-phi-6xl: 5.5625rem;  /* 89px */
+    
+    /* Golden Ratio Layout Proportions */
+    --layout-narrow: 38.2%;
+    --layout-wide: 61.8%;
   }
 
   @keyframes float {

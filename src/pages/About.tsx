@@ -21,18 +21,18 @@ const About = () => {
     <div className="min-h-screen bg-background">
       <Navigation />
       
-      <main className="pt-24 pb-16">
+      <main className="pt-phi-7 pb-phi-6">
         {/* Hero Section */}
-        <section ref={heroReveal.ref} className={`container mx-auto px-4 mb-20 transition-all duration-700 ${heroReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6 animate-fade-in">
-              <h1 className="text-5xl font-bold text-foreground">
+        <section ref={heroReveal.ref} className={`container mx-auto px-phi-4 mb-phi-6 max-w-phi-content transition-all duration-700 ${heroReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div className="grid lg:grid-cols-2 gap-phi-5 items-center">
+            <div className="space-y-phi-4 animate-fade-in">
+              <h1 className="text-phi-5xl font-bold text-foreground">
                 About <span className="gradient-heading">UpDown Robotics</span>
               </h1>
-              <p className="text-xl text-muted-foreground leading-relaxed">
+              <p className="text-phi-xl text-muted-foreground leading-relaxed">
                 Founded in India. Built for the world. UpDown Robotics is redefining urban hygiene through AI autonomy.
               </p>
-              <p className="text-lg text-muted-foreground">
+              <p className="text-phi-lg text-muted-foreground">
                 We envision a future where intelligent machines handle tedious cleaning tasks, allowing humans to focus on what truly matters. Our AI-powered robots combine cutting-edge navigation, real-time decision-making, and autonomous operation to deliver spotless environments with zero human intervention.
               </p>
             </div>
@@ -47,30 +47,30 @@ const About = () => {
         </section>
 
         {/* Mission Section */}
-        <section ref={missionReveal.ref} className={`container mx-auto px-4 mb-20 transition-all duration-700 ${missionReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <div className="text-center max-w-3xl mx-auto space-y-4">
-            <h2 className="text-4xl font-bold text-foreground">Our Mission</h2>
-            <p className="text-2xl text-primary font-semibold">Clean Smarter. Live Better.</p>
-            <p className="text-lg text-muted-foreground">
+        <section ref={missionReveal.ref} className={`container mx-auto px-phi-4 mb-phi-6 max-w-phi-content transition-all duration-700 ${missionReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div className="text-center max-w-phi-content mx-auto space-y-phi-3">
+            <h2 className="text-phi-4xl font-bold text-foreground">Our Mission</h2>
+            <p className="text-phi-2xl text-primary font-semibold">Clean Smarter. Live Better.</p>
+            <p className="text-phi-lg text-muted-foreground">
               We're on a mission to transform facility management through autonomous robotics, making clean, hygienic spaces accessible and affordable for everyone.
             </p>
           </div>
         </section>
 
         {/* Timeline Section */}
-        <section ref={timelineReveal.ref} className={`container mx-auto px-4 mb-20 transition-all duration-700 ${timelineReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <h2 className="text-3xl font-bold text-center mb-12 text-foreground">Our Journey</h2>
-          <div className="grid md:grid-cols-4 gap-8">
+        <section ref={timelineReveal.ref} className={`container mx-auto px-phi-4 mb-phi-6 max-w-phi-content transition-all duration-700 ${timelineReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <h2 className="text-phi-3xl font-bold text-center mb-phi-5 text-foreground">Our Journey</h2>
+          <div className="grid md:grid-cols-4 gap-phi-4">
             {timeline.map((item, index) => (
               <div 
                 key={index}
                 className="relative group animate-fade-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="bg-card p-6 rounded-lg border border-border hover:border-primary transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,178,255,0.3)]">
-                  <item.icon className="w-12 h-12 text-primary mb-4 animate-glow-pulse" />
-                  <div className="text-sm text-primary font-bold mb-2">{item.year}</div>
-                  <h3 className="text-xl font-bold text-foreground mb-2">{item.title}</h3>
+                <div className="bg-card p-phi-4 rounded-lg border border-border hover:border-primary transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,178,255,0.3)]">
+                  <item.icon className="w-phi-5 h-phi-5 text-primary mb-phi-3 animate-glow-pulse" />
+                  <div className="text-phi-sm text-primary font-bold mb-phi-2">{item.year}</div>
+                  <h3 className="text-phi-xl font-bold text-foreground mb-phi-2">{item.title}</h3>
                   <p className="text-muted-foreground">{item.desc}</p>
                 </div>
                 {index < timeline.length - 1 && (
