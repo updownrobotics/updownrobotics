@@ -69,7 +69,7 @@ const Careers = () => {
                 View Open Positions
               </Button>
             </div>
-            <div className="relative animate-float">
+            <div className="relative">
               <img 
                 src={robotCorridor} 
                 alt="Engineer with UpDown Robot" 

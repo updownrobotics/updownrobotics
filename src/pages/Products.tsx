@@ -70,11 +70,10 @@ const Products = () => {
               </div>
 
               <div className="order-1 lg:order-2 relative">
-                <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full" />
                 <img 
                   src={robotOffice} 
                   alt="5-in-1 Smart Cleaning Robot" 
-                  className="relative rounded-2xl shadow-2xl"
+                  className="rounded-2xl shadow-2xl"
                 />
               </div>
             </div>
@@ -84,11 +83,10 @@ const Products = () => {
           <div>
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="relative">
-                <div className="absolute inset-0 bg-electric-cyan/20 blur-3xl rounded-full" />
                 <img 
                   src={robotMall} 
                   alt="Autonomous Cleaning Robot" 
-                  className="relative rounded-2xl shadow-2xl"
+                  className="rounded-2xl shadow-2xl"
                 />
               </div>
 

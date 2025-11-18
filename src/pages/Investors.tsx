@@ -47,11 +47,10 @@ const Investors = () => {
 
           {/* Image */}
           <div className="mb-20 relative">
-            <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full" />
             <img 
               src={robotMall} 
               alt="UpDown Robotics Technology" 
-              className="relative rounded-2xl shadow-2xl mx-auto"
+              className="rounded-2xl shadow-2xl mx-auto"
             />
           </div>
 

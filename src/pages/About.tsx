@@ -30,7 +30,7 @@ const About = () => {
                 We envision a future where intelligent machines handle tedious cleaning tasks, allowing humans to focus on what truly matters. Our AI-powered robots combine cutting-edge navigation, real-time decision-making, and autonomous operation to deliver spotless environments with zero human intervention.
               </p>
             </div>
-            <div className="relative animate-float">
+            <div className="relative">
               <img 
                 src={robotOffice} 
                 alt="UpDown Robot in Workshop" 
