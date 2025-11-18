@@ -12,8 +12,8 @@ export const Hero = () => {
       </div>
       
       <div className="container mx-auto relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="text-center lg:text-left space-y-8 animate-fade-in">
+        <div className="space-y-12">
+          <div className="text-center space-y-8 animate-fade-in">
             <div className="inline-block px-4 py-2 bg-primary/10 border border-primary/30 rounded-full">
               <span className="text-primary font-accent font-semibold text-sm md:text-base">ROBOTS-AS-A-SERVICE</span>
             </div>
@@ -23,11 +23,11 @@ export const Hero = () => {
               <span className="text-electric-cyan"> — Coming Soon</span>
             </h1>
             
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
               <strong className="text-foreground">Manual version launching soon</strong> • Autonomous AMR version in final-stage development
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="/pilot-program">
                 <Button size="lg" className="text-lg px-8 bg-gradient-to-r from-primary to-teal-light hover:shadow-lg hover:shadow-primary/50 transition-all">
                   Join Pilot Program
@@ -41,7 +41,7 @@ export const Hero = () => {
             </div>
           </div>
           
-          <div className="relative animate-fade-in" style={{ animationDelay: '0.2s' }}>
+          <div className="relative animate-fade-in max-w-4xl mx-auto" style={{ animationDelay: '0.2s' }}>
             <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full animate-pulse-slow" />
             <div className="relative">
               <img src={robotOffice} alt="UpDown Intelligent Cleaning Robot" className="relative rounded-2xl shadow-2xl" />
