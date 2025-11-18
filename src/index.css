@@ -76,6 +76,14 @@
   .animate-float-glow {
     animation: float 3s ease-in-out infinite, pulse-glow 3s ease-in-out infinite;
   }
+  
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-xl;
+  }
+  
+  .hover-glow {
+    @apply transition-all duration-300 hover:shadow-lg hover:shadow-primary/30;
+  }
 }
 
 @layer base {
