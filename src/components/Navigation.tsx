@@ -72,7 +72,7 @@ export const Navigation = () => {
             <img 
               src={logo} 
               alt="UpDown Robotics Logo" 
-              className="h-20 w-auto transition-all duration-300 animate-float group-hover:drop-shadow-[0_0_20px_rgba(0,229,255,0.8)]" 
+              className="h-20 w-auto transition-all duration-300 animate-float-glow group-hover:drop-shadow-[0_0_30px_rgba(0,229,255,1)]" 
             />
           </Link>
           
