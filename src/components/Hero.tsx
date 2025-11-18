@@ -1,15 +1,20 @@
 import { Button } from "@/components/ui/button";
 import robotOffice from "@/assets/robot-office.png";
 import { Zap } from "lucide-react";
+import { useParallax } from "@/hooks/use-parallax";
 
 export const Hero = () => {
+  const bgOffset = useParallax(0.3);
+  const contentOffset = useParallax(0.15);
+  const imageOffset = useParallax(0.5);
+  
   return (
     <section className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden bg-gradient-to-b from-deep-black via-background to-background">
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden" style={{ transform: `translateY(${bgOffset}px)` }}>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_hsl(var(--primary)/0.15),transparent_50%)]" />
       </div>
       
-      <div className="container mx-auto relative z-10">
+      <div className="container mx-auto relative z-10" style={{ transform: `translateY(${contentOffset}px)` }}>
         <div className="space-y-12">
           <div className="text-center space-y-8 animate-fade-in">
             <div className="inline-block px-4 py-2 bg-primary/10 border border-primary/30 rounded-full">
@@ -39,7 +44,7 @@ export const Hero = () => {
             </div>
           </div>
           
-          <div className="relative animate-fade-in max-w-4xl mx-auto" style={{ animationDelay: '0.2s' }}>
+          <div className="relative animate-fade-in max-w-4xl mx-auto" style={{ animationDelay: '0.2s', transform: `translateY(${imageOffset}px)` }}>
             <div className="relative">
               <img src={robotOffice} alt="UpDown Intelligent Cleaning Robot" className="relative rounded-2xl shadow-2xl" />
               <div className="absolute top-4 right-4 flex items-center gap-2 px-4 py-2 bg-card/80 backdrop-blur-sm border border-primary/30 rounded-full">
