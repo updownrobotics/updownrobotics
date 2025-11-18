@@ -8,14 +8,14 @@ import logo from "@/assets/logo.png";
 
 const navItems = [
   { name: "Home", path: "/" },
-  { name: "Technology", path: "/#technology" },
-  { name: "R&D Lab", path: "/#rdlab" },
-  { name: "RaaS Model", path: "/#raas" },
-  { name: "Vision & Roadmap", path: "/#vision" },
-  { name: "Investors", path: "/#investors" },
-  { name: "About Us", path: "/about" },
-  { name: "Partners", path: "/partners" },
-  { name: "Careers", path: "/careers" },
+  { name: "Products", path: "/products" },
+  { name: "Technology", path: "/technology" },
+  { name: "R&D Progress", path: "/rd-progress" },
+  { name: "Vision & Roadmap", path: "/vision" },
+  { name: "Pilot Program", path: "/pilot-program" },
+  { name: "Investors", path: "/investors" },
+  { name: "Use Cases", path: "/use-cases" },
+  { name: "About", path: "/about" },
   { name: "Contact", path: "/contact" },
 ];
 
