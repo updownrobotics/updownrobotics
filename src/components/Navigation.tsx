@@ -33,9 +33,21 @@ export const Navigation = () => {
   }, []);
 
   const isActive = (path: string) => {
-    if (path === "/") return location.pathname === "/";
+    if (path === "/") return location.pathname === "/" && !location.hash;
     if (path.startsWith("/#")) return location.pathname === "/" && location.hash === path.slice(1);
     return location.pathname === path;
+  };
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
+    if (path.startsWith("/#")) {
+      e.preventDefault();
+      const targetId = path.slice(2);
+      const element = document.getElementById(targetId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+        window.history.pushState({}, '', path);
+      }
+    }
   };
 
   return (
@@ -60,6 +72,7 @@ export const Navigation = () => {
               <Link
                 key={item.name}
                 to={item.path}
+                onClick={(e) => handleNavClick(e, item.path)}
                 className={cn(
                   "px-4 py-2 text-sm font-medium transition-all duration-300 relative group",
                   isActive(item.path) 
@@ -93,7 +106,10 @@ export const Navigation = () => {
                   <Link
                     key={item.name}
                     to={item.path}
-                    onClick={() => setMobileMenuOpen(false)}
+                    onClick={(e) => {
+                      handleNavClick(e, item.path);
+                      setMobileMenuOpen(false);
+                    }}
                     className={cn(
                       "px-4 py-3 text-base font-medium transition-all duration-300 rounded-lg relative",
                       isActive(item.path) 
