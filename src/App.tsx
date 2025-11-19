@@ -1,3 +1,4 @@
+import React from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -42,17 +43,47 @@ const AnimatedRoutes = () => {
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <ScrollToTop />
-        <AnimatedRoutes />
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+
+const skipLinkStyles: React.CSSProperties = {
+  position: 'absolute',
+  left: 0,
+  top: 0,
+  background: '#fff',
+  color: '#000',
+  padding: '8px 16px',
+  zIndex: 1000,
+  transform: 'translateY(-200%)',
+  transition: 'transform 0.2s',
+};
+
+const skipLinkFocusStyles: React.CSSProperties = {
+  ...skipLinkStyles,
+  transform: 'translateY(0)',
+};
+
+const App = () => {
+  const [skipFocused, setSkipFocused] = React.useState(false);
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <a
+          href="#main-content"
+          style={skipFocused ? skipLinkFocusStyles : skipLinkStyles}
+          onFocus={() => setSkipFocused(true)}
+          onBlur={() => setSkipFocused(false)}
+          onMouseDown={() => setSkipFocused(false)}
+        >
+          Skip to main content
+        </a>
+        <BrowserRouter>
+          <ScrollToTop />
+          <AnimatedRoutes />
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
+};
 
 export default App;

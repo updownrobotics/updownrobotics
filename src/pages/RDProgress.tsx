@@ -2,7 +2,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Map, Brain, Droplet, Gauge, CheckCircle2, Code2, Cpu } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import robotCorridor from "@/assets/robot-corridor.png";
+const robotCorridor = "/images_opt/assets/robot-corridor.webp";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { useParallaxMotion } from "@/hooks/use-parallax-motion";
 import { motion } from "framer-motion";

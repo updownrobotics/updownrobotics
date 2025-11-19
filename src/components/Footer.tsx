@@ -2,7 +2,7 @@ import { MapPin, Mail, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Link } from "react-router-dom";
-import logo from "@/assets/logo.png";
+const logo = "/images_opt/assets/logo.webp";
 
 export const Footer = () => {
   return (

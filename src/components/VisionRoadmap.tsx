@@ -1,5 +1,5 @@
-import robotDelivery from "@/assets/robot-delivery.png";
-import robotCorridor from "@/assets/robot-corridor.png";
+const robotDelivery = "/images_opt/assets/robot-delivery.webp";
+const robotCorridor = "/images_opt/assets/robot-corridor.webp";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 const timeline = [

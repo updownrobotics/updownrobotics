@@ -3,7 +3,7 @@ import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { TrendingUp, Target, Code2, Layers, Globe } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import robotMall from "@/assets/robot-mall.png";
+const robotMall = "/images_opt/assets/robot-mall.webp";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { useParallaxMotion } from "@/hooks/use-parallax-motion";
 import { motion } from "framer-motion";

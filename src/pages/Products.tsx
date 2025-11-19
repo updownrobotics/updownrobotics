@@ -3,8 +3,8 @@ import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { CheckCircle, Zap, Brain, Shield, Gauge, AlertCircle } from "lucide-react";
-import robotOffice from "@/assets/robot-office.png";
-import robotMall from "@/assets/robot-mall.png";
+const robotOffice = "/images_opt/assets/robot-office.webp";
+const robotMall = "/images_opt/assets/robot-mall.webp";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { useParallaxMotion } from "@/hooks/use-parallax-motion";
 import { motion } from "framer-motion";
@@ -86,11 +86,11 @@ const Products = () => {
                 className="order-1 lg:order-2 relative"
               >
                 <AspectRatio ratio={1.618}>
-                  <img 
-                    src={robotOffice} 
-                    alt="5-in-1 Smart Cleaning Robot" 
-                    className="rounded-2xl shadow-2xl w-full h-full object-cover"
-                  />
+                  <picture>
+                    <source srcSet="/images_opt/assets/robot-office.avif" type="image/avif" />
+                    <source srcSet="/images_opt/assets/robot-office.webp" type="image/webp" />
+                    <img src="/images_opt/assets/robot-office.jpg" alt="5-in-1 Smart Cleaning Robot" className="rounded-2xl shadow-2xl w-full h-full object-cover" />
+                  </picture>
                 </AspectRatio>
               </div>
             </div>

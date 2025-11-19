@@ -1,4 +1,4 @@
-import robotMall from "@/assets/robot-mall.png";
+const robotMall = "/images_opt/assets/robot-mall.webp";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Calendar, Monitor, Battery, Cloud } from "lucide-react";
 import { Button } from "@/components/ui/button";

@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/logo.png";
+const logo = "/images_opt/assets/logo.webp";
 
 const navItems = [
   { name: "Home", path: "/" },

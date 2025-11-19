@@ -1,7 +1,6 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import robotOffice from "@/assets/robot-office.png";
 import { Lightbulb, Wrench, Rocket, Trophy } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { useParallaxMotion } from "@/hooks/use-parallax-motion";
@@ -48,11 +47,11 @@ const About = () => {
               className="relative"
             >
               <AspectRatio ratio={1.618}>
-                <img 
-                  src={robotOffice} 
-                  alt="UpDown Robot in Workshop" 
-                  className="w-full h-full object-cover rounded-lg shadow-[0_0_50px_rgba(23,162,184,0.3)]"
-                />
+                <picture>
+                  <source srcSet="/images_opt/assets/robot-office.avif" type="image/avif" />
+                  <source srcSet="/images_opt/assets/robot-office.webp" type="image/webp" />
+                  <img src="/images_opt/assets/robot-office.jpg" alt="UpDown Robot in Workshop" className="w-full h-full object-cover rounded-lg shadow-[0_0_50px_rgba(23,162,184,0.3)]" />
+                </picture>
               </AspectRatio>
             </div>
           </div>

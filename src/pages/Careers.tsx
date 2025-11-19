@@ -2,7 +2,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import robotCorridor from "@/assets/robot-corridor.png";
+const robotCorridor = "/images_opt/assets/robot-corridor.webp";
 import { Cpu, Code, Brain, Palette, Briefcase, Lightbulb } from "lucide-react";
 
 const Careers = () => {

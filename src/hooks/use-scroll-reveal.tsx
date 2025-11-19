@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 export const useScrollReveal = (threshold: number = 0.1) => {
   const ref = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true); // Temporarily set to true for debugging
 
   useEffect(() => {
     const observer = new IntersectionObserver(
