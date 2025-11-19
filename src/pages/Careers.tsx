@@ -71,13 +71,11 @@ const Careers = () => {
               </Button>
             </div>
             <div className="relative">
-              <AspectRatio ratio={1.618}>
-                <img 
-                  src={robotCorridor} 
-                  alt="Engineer with UpDown Robot" 
-                  className="w-full h-full object-contain rounded-lg shadow-[0_0_50px_rgba(23,162,184,0.3)]"
-                />
-              </AspectRatio>
+              <img 
+                src={robotCorridor} 
+                alt="Engineer with UpDown Robot" 
+                className="w-full h-auto object-cover rounded-lg shadow-2xl"
+              />
             </div>
           </div>
         </section>
