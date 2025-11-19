@@ -22,6 +22,7 @@ const navItems = [
 export const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [logoAnimationFast, setLogoAnimationFast] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -39,6 +40,10 @@ export const Navigation = () => {
   };
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
+    // Trigger fast animation
+    setLogoAnimationFast(true);
+    setTimeout(() => setLogoAnimationFast(false), 1000);
+    
     if (path.startsWith("/#")) {
       e.preventDefault();
       const targetId = path.slice(2);
@@ -62,17 +67,24 @@ export const Navigation = () => {
           <Link 
             to="/" 
             onClick={(e) => {
+              setLogoAnimationFast(true);
+              setTimeout(() => setLogoAnimationFast(false), 1000);
               if (location.pathname === "/") {
                 e.preventDefault();
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }
             }}
             className="flex items-center gap-phi-2 group flex-shrink-0"
+            onMouseEnter={() => setLogoAnimationFast(true)}
+            onMouseLeave={() => setLogoAnimationFast(false)}
           >
             <img 
               src={logo} 
               alt="UpDown Robotics Logo" 
-              className="h-10 sm:h-12 md:h-phi-5 lg:h-phi-6 w-auto animate-float group-hover:scale-110"
+              className={cn(
+                "h-10 sm:h-12 md:h-phi-5 lg:h-phi-6 w-auto group-hover:scale-110 transition-transform",
+                logoAnimationFast ? "animate-[float_1s_ease-in-out_infinite]" : "animate-float"
+              )}
             />
             <div className="flex flex-col leading-tight">
               <span className="text-xs sm:text-sm md:text-phi-base lg:text-phi-lg font-heading font-bold text-foreground whitespace-nowrap">
