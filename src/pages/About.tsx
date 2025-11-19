@@ -4,12 +4,16 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 import robotOffice from "@/assets/robot-office.png";
 import { Lightbulb, Wrench, Rocket, Trophy } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import { useParallaxMotion } from "@/hooks/use-parallax-motion";
+import { motion } from "framer-motion";
 
 const About = () => {
   const heroReveal = useScrollReveal();
   const missionReveal = useScrollReveal();
   const timelineReveal = useScrollReveal();
   const foundersReveal = useScrollReveal();
+  const heroText = useParallaxMotion({ speed: 0.382 });
+  const heroImage = useParallaxMotion({ speed: 0.618 });
   
   const timeline = [
     { icon: Lightbulb, title: "Idea", year: "2023", desc: "Vision to automate urban hygiene" },
@@ -26,7 +30,11 @@ const About = () => {
         {/* Hero Section */}
         <section ref={heroReveal.ref} className={`container mx-auto px-phi-4 mb-phi-6 max-w-phi-content transition-all duration-700 ${heroReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="grid lg:grid-cols-2 gap-phi-5 items-center">
-            <div className="space-y-phi-4 animate-fade-in">
+            <motion.div 
+              ref={heroText.ref}
+              style={{ y: heroText.y }}
+              className="space-y-phi-4 animate-fade-in"
+            >
               <h1 className="text-phi-5xl font-bold text-foreground">
                 About <span className="gradient-heading">UpDown Robotics</span>
               </h1>
@@ -36,8 +44,12 @@ const About = () => {
               <p className="text-phi-lg text-muted-foreground">
                 We envision a future where intelligent machines handle tedious cleaning tasks, allowing humans to focus on what truly matters. Our AI-powered robots combine cutting-edge navigation, real-time decision-making, and autonomous operation to deliver spotless environments with zero human intervention.
               </p>
-            </div>
-            <div className="relative">
+            </motion.div>
+            <motion.div 
+              ref={heroImage.ref}
+              style={{ y: heroImage.y, scale: heroImage.scale }}
+              className="relative"
+            >
               <AspectRatio ratio={1.618}>
                 <img 
                   src={robotOffice} 
@@ -45,7 +57,7 @@ const About = () => {
                   className="w-full h-full object-cover rounded-lg shadow-[0_0_50px_rgba(23,162,184,0.3)]"
                 />
               </AspectRatio>
-            </div>
+            </motion.div>
           </div>
         </section>
 

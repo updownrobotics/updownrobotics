@@ -6,6 +6,8 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 import robotDelivery from "@/assets/robot-delivery.png";
 import robotApartment from "@/assets/robot-apartment.png";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import { useParallaxMotion } from "@/hooks/use-parallax-motion";
+import { motion } from "framer-motion";
 
 const timeline = [
   {
@@ -50,6 +52,9 @@ const Vision = () => {
   const visionCardsReveal = useScrollReveal();
   const timelineReveal = useScrollReveal();
   const ctaReveal = useScrollReveal();
+  const heroText = useParallaxMotion({ speed: 0.382 });
+  const visionImage1 = useParallaxMotion({ speed: 0.5 });
+  const visionImage2 = useParallaxMotion({ speed: 0.5 });
   
   return (
     <main className="min-h-screen bg-gradient-to-b from-background via-muted/30 to-background">
@@ -58,7 +63,11 @@ const Vision = () => {
       <section className="pt-32 pb-24 px-6">
         <div className="container mx-auto">
           {/* Hero */}
-          <div className="text-center mb-16 animate-fade-in">
+          <motion.div 
+            ref={heroText.ref}
+            style={{ y: heroText.y }}
+            className="text-center mb-16 animate-fade-in"
+          >
             <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6">
               Building India's <span className="gradient-heading">Autonomous Cleaning Future</span>
             </h1>
@@ -66,7 +75,7 @@ const Vision = () => {
               From intelligent cleaning robots to fully autonomous building operations—
               our vision extends beyond today's challenges
             </p>
-          </div>
+          </motion.div>
 
           {/* Vision Cards */}
           <div ref={visionCardsReveal.ref} className={`grid lg:grid-cols-2 gap-12 mb-24 transition-all duration-700 ${visionCardsReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
@@ -78,13 +87,15 @@ const Vision = () => {
                 buildings are maintained. We envision a future where intelligent robots 
                 handle repetitive tasks, allowing humans to focus on what matters most.
               </p>
-              <AspectRatio ratio={1.618}>
-                <img 
-                  src={robotApartment} 
-                  alt="Future Vision" 
-                  className="rounded-xl shadow-lg w-full h-full object-cover"
-                />
-              </AspectRatio>
+              <motion.div ref={visionImage1.ref} style={{ y: visionImage1.y, scale: visionImage1.scale }}>
+                <AspectRatio ratio={1.618}>
+                  <img 
+                    src={robotApartment} 
+                    alt="Future Vision" 
+                    className="rounded-xl shadow-lg w-full h-full object-cover"
+                  />
+                </AspectRatio>
+              </motion.div>
             </div>
 
             <div className="relative overflow-hidden bg-card border border-border rounded-2xl p-8">
@@ -95,13 +106,15 @@ const Vision = () => {
                 security patrols, and facility inspections—making our robots the Swiss Army 
                 knife of building operations.
               </p>
-              <AspectRatio ratio={1.618}>
-                <img 
-                  src={robotDelivery} 
-                  alt="Delivery Evolution" 
-                  className="rounded-xl shadow-lg w-full h-full object-cover"
-                />
-              </AspectRatio>
+              <motion.div ref={visionImage2.ref} style={{ y: visionImage2.y, scale: visionImage2.scale }}>
+                <AspectRatio ratio={1.618}>
+                  <img 
+                    src={robotDelivery} 
+                    alt="Delivery Evolution" 
+                    className="rounded-xl shadow-lg w-full h-full object-cover"
+                  />
+                </AspectRatio>
+              </motion.div>
             </div>
           </div>
 

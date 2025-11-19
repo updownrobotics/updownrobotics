@@ -7,6 +7,8 @@ import { CheckCircle, TrendingDown, BarChart3, Award, Zap } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import { useParallaxMotion } from "@/hooks/use-parallax-motion";
+import { motion } from "framer-motion";
 
 const benefits = [
   { icon: TrendingDown, title: "Lower Cleaning Cost", description: "Reduce operational expenses significantly" },
@@ -27,6 +29,7 @@ const suitableFor = [
 const PilotProgram = () => {
   const benefitsReveal = useScrollReveal();
   const formReveal = useScrollReveal();
+  const heroText = useParallaxMotion({ speed: 0.382 });
   
   const [formData, setFormData] = useState({
     name: "",
@@ -61,7 +64,11 @@ const PilotProgram = () => {
       <section className="pt-32 pb-24 px-6">
         <div className="container mx-auto max-w-6xl">
           {/* Hero */}
-          <div className="text-center mb-16 animate-fade-in">
+          <motion.div 
+            ref={heroText.ref}
+            style={{ y: heroText.y }}
+            className="text-center mb-16 animate-fade-in"
+          >
             <div className="inline-block px-4 py-2 bg-primary/10 border border-primary/30 rounded-full mb-6">
               <span className="text-primary font-accent font-semibold">LIMITED SPOTS AVAILABLE</span>
             </div>
@@ -74,7 +81,7 @@ const PilotProgram = () => {
               Experience our intelligent cleaning robot in your building. 
               Be among the first to revolutionize facility management.
             </p>
-          </div>
+          </motion.div>
 
           {/* Benefits */}
           <div ref={benefitsReveal.ref} className={`mb-20 transition-all duration-700 ${benefitsReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>

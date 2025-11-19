@@ -6,6 +6,8 @@ import { CheckCircle, Zap, Brain, Shield, Gauge, AlertCircle } from "lucide-reac
 import robotOffice from "@/assets/robot-office.png";
 import robotMall from "@/assets/robot-mall.png";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import { useParallaxMotion } from "@/hooks/use-parallax-motion";
+import { motion } from "framer-motion";
 
 const version1Features = [
   { icon: Zap, text: "5-stage cleaning: sweep, scrub, mop, dry, disinfect" },
@@ -25,6 +27,9 @@ const Products = () => {
   const version1Reveal = useScrollReveal();
   const version2Reveal = useScrollReveal();
   const disclaimerReveal = useScrollReveal();
+  const heroText = useParallaxMotion({ speed: 0.382 });
+  const image1 = useParallaxMotion({ speed: 0.618 });
+  const image2 = useParallaxMotion({ speed: 0.618 });
   
   return (
     <main className="min-h-screen bg-gradient-to-b from-background via-muted/30 to-background">
@@ -32,14 +37,18 @@ const Products = () => {
       
       <section className="pt-phi-8 pb-phi-6 px-phi-4">
         <div className="container mx-auto max-w-phi-content">
-          <div className="text-center mb-phi-6 animate-fade-in">
+          <motion.div 
+            ref={heroText.ref}
+            style={{ y: heroText.y }}
+            className="text-center mb-phi-6 animate-fade-in"
+          >
             <h1 className="text-phi-5xl md:text-phi-7xl font-heading font-bold mb-phi-4">
               Next-Generation <span className="gradient-heading">Cleaning Robots</span>
             </h1>
             <p className="text-phi-xl text-muted-foreground max-w-phi-content mx-auto">
               Two revolutionary products designed for India's commercial and residential spaces
             </p>
-          </div>
+          </motion.div>
 
           {/* Version 1 - Manual Robot */}
           <div ref={version1Reveal.ref} className={`mb-phi-8 transition-all duration-700 ${version1Reveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
@@ -75,7 +84,11 @@ const Products = () => {
                 </div>
               </div>
 
-              <div className="order-1 lg:order-2 relative">
+              <motion.div 
+                ref={image1.ref}
+                style={{ y: image1.y, scale: image1.scale }}
+                className="order-1 lg:order-2 relative"
+              >
                 <AspectRatio ratio={1.618}>
                   <img 
                     src={robotOffice} 
@@ -83,14 +96,18 @@ const Products = () => {
                     className="rounded-2xl shadow-2xl w-full h-full object-cover"
                   />
                 </AspectRatio>
-              </div>
+              </motion.div>
             </div>
           </div>
 
           {/* Version 2 - Autonomous Robot */}
           <div ref={version2Reveal.ref} className={`transition-all duration-700 ${version2Reveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="grid lg:grid-cols-2 gap-phi-5 items-center">
-              <div className="relative">
+              <motion.div 
+                ref={image2.ref}
+                style={{ y: image2.y, scale: image2.scale }}
+                className="relative"
+              >
                 <AspectRatio ratio={1.618}>
                   <img 
                     src={robotMall} 
@@ -98,7 +115,7 @@ const Products = () => {
                     className="rounded-2xl shadow-2xl w-full h-full object-cover"
                   />
                 </AspectRatio>
-              </div>
+              </motion.div>
 
               <div className="space-y-phi-4">
                 <div className="inline-block px-phi-3 py-phi-2 bg-accent/10 border border-accent/30 rounded-full">

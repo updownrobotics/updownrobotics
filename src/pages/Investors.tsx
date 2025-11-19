@@ -5,6 +5,8 @@ import { TrendingUp, Target, Code2, Layers, Globe } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import robotMall from "@/assets/robot-mall.png";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import { useParallaxMotion } from "@/hooks/use-parallax-motion";
+import { motion } from "framer-motion";
 
 const highlights = [
   {
@@ -33,6 +35,8 @@ const Investors = () => {
   const imageReveal = useScrollReveal();
   const highlightsReveal = useScrollReveal();
   const thesisReveal = useScrollReveal();
+  const heroText = useParallaxMotion({ speed: 0.382 });
+  const heroImage = useParallaxMotion({ speed: 0.618 });
   
   return (
     <main className="min-h-screen bg-gradient-to-b from-background via-muted/30 to-background">
@@ -41,7 +45,11 @@ const Investors = () => {
       <section className="pt-32 pb-24 px-6">
         <div className="container mx-auto max-w-6xl">
           {/* Hero */}
-          <div className="text-center mb-16 animate-fade-in">
+          <motion.div 
+            ref={heroText.ref}
+            style={{ y: heroText.y }}
+            className="text-center mb-16 animate-fade-in"
+          >
             <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6">
               Interested in Investing in India's <span className="gradient-heading">Robotics Future?</span>
             </h1>
@@ -49,10 +57,14 @@ const Investors = () => {
               UpDown Robotics is building India's first intelligent indoor cleaning AMR platform. 
               We are open to strategic investors and technology partners.
             </p>
-          </div>
+          </motion.div>
 
           {/* Image */}
-          <div ref={imageReveal.ref} className={`mb-20 relative transition-all duration-700 ${imageReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <motion.div 
+            ref={heroImage.ref}
+            style={{ y: heroImage.y, scale: heroImage.scale }}
+            className={`mb-20 relative transition-all duration-700 ${imageReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+          >
             <AspectRatio ratio={1.618}>
               <img 
                 src={robotMall} 
@@ -60,7 +72,7 @@ const Investors = () => {
                 className="rounded-2xl shadow-2xl mx-auto w-full h-full object-cover"
               />
             </AspectRatio>
-          </div>
+          </motion.div>
 
           {/* Highlights */}
           <div ref={highlightsReveal.ref} className={`grid md:grid-cols-2 gap-8 mb-20 transition-all duration-700 ${highlightsReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
