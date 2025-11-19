@@ -84,14 +84,14 @@ export const Navigation = () => {
             </div>
           </Link>
           
-          <div className="hidden lg:flex items-center gap-4 xl:gap-6 flex-1 justify-center">
+          <div className="hidden lg:flex items-center gap-3 xl:gap-6 flex-1 justify-center">
             {navItems.slice(0, -2).map((item) => (
               <Link
                 key={item.name}
                 to={item.path}
                 onClick={(e) => handleNavClick(e, item.path)}
                 className={cn(
-                  "px-4 py-2 text-base font-medium transition-all duration-300 relative group whitespace-nowrap hover:scale-105",
+                  "px-3 xl:px-4 py-2 text-sm xl:text-base font-medium transition-all duration-300 relative group whitespace-nowrap hover:scale-105",
                   isActive(item.path) 
                     ? "text-primary" 
                     : "text-muted-foreground hover:text-primary"
@@ -111,7 +111,7 @@ export const Navigation = () => {
             
           </div>
 
-          <div className="hidden lg:flex items-center gap-4">
+          <div className="hidden lg:flex items-center gap-3 xl:gap-4">
             {/* About and Contact */}
             {navItems.slice(-2).map((item) => (
               <Link
@@ -119,7 +119,7 @@ export const Navigation = () => {
                 to={item.path}
                 onClick={(e) => handleNavClick(e, item.path)}
                 className={cn(
-                  "px-4 py-2 text-base font-medium transition-all duration-300 relative group whitespace-nowrap hover:scale-105",
+                  "px-3 xl:px-4 py-2 text-sm xl:text-base font-medium transition-all duration-300 relative group whitespace-nowrap hover:scale-105",
                   isActive(item.path) 
                     ? "text-primary" 
                     : "text-muted-foreground hover:text-primary"
@@ -136,16 +136,6 @@ export const Navigation = () => {
                 />
               </Link>
             ))}
-            
-            {/* Pilot Program Button */}
-            <Link to="/pilot-program">
-              <Button 
-                size="default"
-                className="bg-gradient-to-r from-accent to-electric-cyan hover:shadow-lg hover:shadow-accent/50 text-accent-foreground font-semibold transition-all hover:scale-105"
-              >
-                Pilot Program
-              </Button>
-            </Link>
           </div>
 
           {/* Mobile Menu */}
