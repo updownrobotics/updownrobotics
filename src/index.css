@@ -131,10 +131,6 @@
   .gradient-heading {
     @apply bg-gradient-to-br from-primary to-electric-cyan bg-clip-text text-transparent;
   }
-
-  .nav-text-responsive {
-    font-size: clamp(13px, 1vw, 16px);
-  }
 }
 
 @layer base {

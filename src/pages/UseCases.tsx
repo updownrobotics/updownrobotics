@@ -4,8 +4,6 @@ import { Building2, Home, Hospital, Hotel, ShoppingBag, Plane, Briefcase, Cpu } 
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { useParallaxMotion } from "@/hooks/use-parallax-motion";
 import { motion } from "framer-motion";
-import { useState } from "react";
-import { UseCaseModal } from "@/components/UseCaseModal";
 
 const useCases = [
   {
@@ -62,7 +60,6 @@ const UseCases = () => {
   const gridReveal = useScrollReveal();
   const ctaReveal = useScrollReveal();
   const heroText = useParallaxMotion({ speed: 0.382 });
-  const [selectedUseCase, setSelectedUseCase] = useState<{ title: string; icon: any } | null>(null);
   
   return (
     <main className="min-h-screen bg-gradient-to-b from-background via-muted/30 to-background">
@@ -88,8 +85,7 @@ const UseCases = () => {
             {useCases.map((useCase, index) => (
               <div
                 key={index}
-                onClick={() => setSelectedUseCase({ title: useCase.title, icon: useCase.icon })}
-                className="group relative overflow-hidden bg-card border border-border rounded-2xl p-6 hover:border-primary/50 transition-all duration-500 hover:shadow-xl hover:shadow-primary/20 cursor-pointer"
+                className="group relative overflow-hidden bg-card border border-border rounded-2xl p-6 hover:border-primary/50 transition-all duration-500 hover:shadow-xl hover:shadow-primary/20"
               >
                 <div className={`absolute inset-0 bg-gradient-to-br ${useCase.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
                 
@@ -102,12 +98,8 @@ const UseCases = () => {
                     {useCase.title}
                   </h3>
                   
-                  <p className="text-sm text-muted-foreground mb-4">
+                  <p className="text-muted-foreground">
                     {useCase.description}
-                  </p>
-                  
-                  <p className="text-xs text-primary font-semibold group-hover:underline">
-                    Click for details →
                   </p>
                 </div>
 
@@ -136,16 +128,6 @@ const UseCases = () => {
       </section>
 
       <Footer />
-      
-      {/* Modal */}
-      {selectedUseCase && (
-        <UseCaseModal
-          isOpen={!!selectedUseCase}
-          onClose={() => setSelectedUseCase(null)}
-          title={selectedUseCase.title}
-          icon={selectedUseCase.icon}
-        />
-      )}
     </main>
   );
 };

@@ -86,11 +86,13 @@ const Vision = () => {
                 handle repetitive tasks, allowing humans to focus on what matters most.
               </p>
               <div>
-                <img 
-                  src={robotApartment} 
-                  alt="Future Vision" 
-                  className="rounded-xl shadow-lg w-full h-auto object-cover"
-                />
+                <AspectRatio ratio={1.618}>
+                  <img 
+                    src={robotApartment} 
+                    alt="Future Vision" 
+                    className="rounded-xl shadow-lg w-full h-full object-cover"
+                  />
+                </AspectRatio>
               </div>
             </div>
 
@@ -103,11 +105,13 @@ const Vision = () => {
                 knife of building operations.
               </p>
               <div>
-                <img 
-                  src={robotDelivery} 
-                  alt="Delivery Evolution" 
-                  className="rounded-xl shadow-lg w-full h-auto object-cover"
-                />
+                <AspectRatio ratio={1.618}>
+                  <img 
+                    src={robotDelivery} 
+                    alt="Delivery Evolution" 
+                    className="rounded-xl shadow-lg w-full h-full object-cover"
+                  />
+                </AspectRatio>
               </div>
             </div>
           </div>

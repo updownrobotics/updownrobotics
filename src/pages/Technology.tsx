@@ -76,7 +76,7 @@ const Technology = () => {
                 <img 
                   src={robotOffice} 
                   alt="UpDown Robot Technology" 
-                  className="relative rounded-2xl shadow-2xl w-full h-full object-contain"
+                  className="relative rounded-2xl shadow-2xl w-full h-full object-cover"
                 />
               </AspectRatio>
             </div>

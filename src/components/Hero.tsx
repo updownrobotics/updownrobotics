@@ -58,17 +58,17 @@ export const Hero = () => {
             className="relative animate-fade-in max-w-phi-content mx-auto"
             style={{ animationDelay: '0.2s' }}
           >
-            <div className="relative">
+            <AspectRatio ratio={1.618}>
               <img 
                 src={robotOffice} 
                 alt="UpDown Intelligent Cleaning Robot" 
-                className="w-full h-auto object-cover rounded-2xl shadow-2xl shadow-primary/20" 
+                className="w-full h-full object-cover rounded-2xl shadow-2xl shadow-primary/20" 
               />
               <div className="absolute top-phi-2 right-phi-2 sm:top-phi-3 sm:right-phi-3 flex items-center gap-phi-1 sm:gap-phi-2 px-phi-2 sm:px-phi-3 py-phi-1 sm:py-phi-2 bg-card/80 backdrop-blur-sm border border-primary/30 rounded-full">
                 <div className="w-phi-1 sm:w-phi-2 h-phi-1 sm:h-phi-2 bg-primary rounded-full animate-pulse" />
                 <span className="text-[10px] sm:text-phi-sm font-accent font-semibold text-primary">ACTIVE</span>
               </div>
-            </div>
+            </AspectRatio>
           </div>
         </div>
 

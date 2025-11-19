@@ -45,11 +45,13 @@ export const RaaSModel = () => {
         </div>
         
         <div className="mb-phi-6">
-          <img 
-            src={robotMall} 
-            alt="UpDown Robot fleet in operation" 
-            className="w-full h-auto object-cover rounded-2xl shadow-2xl"
-          />
+          <AspectRatio ratio={1.618}>
+            <img 
+              src={robotMall} 
+              alt="UpDown Robot fleet in operation" 
+              className="w-full h-full object-cover rounded-2xl shadow-2xl"
+            />
+          </AspectRatio>
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">

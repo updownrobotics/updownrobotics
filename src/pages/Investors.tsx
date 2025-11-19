@@ -62,11 +62,13 @@ const Investors = () => {
           <div 
             className={`mb-20 relative transition-all duration-700 ${imageReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
           >
-            <img 
-              src={robotMall} 
-              alt="UpDown Robotics Technology" 
-              className="rounded-2xl shadow-2xl mx-auto w-full h-auto object-cover"
-            />
+            <AspectRatio ratio={1.618}>
+              <img 
+                src={robotMall} 
+                alt="UpDown Robotics Technology" 
+                className="rounded-2xl shadow-2xl mx-auto w-full h-full object-cover"
+              />
+            </AspectRatio>
           </div>
 
           {/* Highlights */}

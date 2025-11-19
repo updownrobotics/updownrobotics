@@ -85,11 +85,13 @@ const Products = () => {
               <div 
                 className="order-1 lg:order-2 relative"
               >
-                <img 
-                  src={robotOffice} 
-                  alt="5-in-1 Smart Cleaning Robot" 
-                  className="rounded-2xl shadow-2xl w-full h-auto object-cover"
-                />
+                <AspectRatio ratio={1.618}>
+                  <img 
+                    src={robotOffice} 
+                    alt="5-in-1 Smart Cleaning Robot" 
+                    className="rounded-2xl shadow-2xl w-full h-full object-cover"
+                  />
+                </AspectRatio>
               </div>
             </div>
           </div>
@@ -100,11 +102,13 @@ const Products = () => {
               <div 
                 className="relative"
               >
-                <img 
-                  src={robotMall} 
-                  alt="Autonomous Cleaning Robot" 
-                  className="rounded-2xl shadow-2xl w-full h-auto object-cover"
-                />
+                <AspectRatio ratio={1.618}>
+                  <img 
+                    src={robotMall} 
+                    alt="Autonomous Cleaning Robot" 
+                    className="rounded-2xl shadow-2xl w-full h-full object-cover"
+                  />
+                </AspectRatio>
               </div>
 
               <div className="space-y-phi-4">
