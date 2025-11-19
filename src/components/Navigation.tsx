@@ -67,31 +67,31 @@ export const Navigation = () => {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }
             }}
-            className="flex items-center gap-phi-2 group flex-shrink-0"
+            className="flex items-center gap-phi-1 sm:gap-phi-2 group flex-shrink-0 mr-phi-3 sm:mr-phi-4 md:mr-phi-5"
           >
             <img 
               src={logo} 
               alt="UpDown Robotics Logo" 
-              className="h-10 sm:h-12 md:h-phi-5 lg:h-phi-6 w-auto animate-float animate-glow-pulse group-hover:scale-110 transition-transform duration-phi" 
+              className="h-8 sm:h-10 md:h-12 w-auto animate-float animate-glow-pulse group-hover:scale-110 transition-transform duration-phi" 
             />
-            <div className="flex flex-col leading-tight">
-              <span className="text-xs sm:text-sm md:text-phi-base lg:text-phi-lg font-heading font-bold text-foreground whitespace-nowrap">
+            <div className="flex flex-col leading-none">
+              <span className="text-[10px] sm:text-xs md:text-sm lg:text-phi-base font-heading font-bold text-foreground whitespace-nowrap">
                 UpDown
               </span>
-              <span className="text-xs sm:text-sm md:text-phi-base lg:text-phi-lg font-heading font-bold text-foreground whitespace-nowrap">
+              <span className="text-[10px] sm:text-xs md:text-sm lg:text-phi-base font-heading font-bold text-foreground whitespace-nowrap">
                 Robotics
               </span>
             </div>
           </Link>
           
-          <div className="hidden lg:flex items-center space-x-phi-1">
+          <div className="hidden xl:flex items-center space-x-phi-1">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 to={item.path}
                 onClick={(e) => handleNavClick(e, item.path)}
                 className={cn(
-                  "px-phi-3 py-phi-2 text-phi-sm font-medium transition-all duration-300 relative group",
+                  "px-phi-2 py-phi-2 text-[11px] font-medium transition-all duration-300 relative group",
                   isActive(item.path) 
                     ? "text-primary" 
                     : "text-muted-foreground hover:text-primary"
@@ -112,7 +112,7 @@ export const Navigation = () => {
 
           {/* Mobile Menu */}
           <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
-            <SheetTrigger asChild className="lg:hidden">
+            <SheetTrigger asChild className="xl:hidden">
               <Button variant="ghost" size="icon" className="text-primary hover:bg-primary/10">
                 <Menu className="h-6 w-6" />
               </Button>
