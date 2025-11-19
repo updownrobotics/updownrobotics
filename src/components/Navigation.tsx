@@ -57,8 +57,8 @@ export const Navigation = () => {
         scrolled ? "bg-background/80 backdrop-blur-md shadow-[0_0_30px_rgba(0,178,255,0.3)]" : "bg-background"
       )}
     >
-      <div className="container mx-auto px-phi-3">
-        <div className="flex items-center justify-between h-phi-6">
+      <div className="container mx-auto px-phi-2 sm:px-phi-3">
+        <div className="flex items-center justify-between h-16 sm:h-phi-6">
           <Link 
             to="/" 
             onClick={(e) => {
@@ -67,13 +67,16 @@ export const Navigation = () => {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }
             }}
-            className="flex items-center group"
+            className="flex items-center gap-phi-2 group flex-shrink-0"
           >
             <img 
               src={logo} 
               alt="UpDown Robotics Logo" 
-              className="h-phi-6 w-auto animate-float animate-glow-pulse group-hover:scale-110 transition-transform duration-phi" 
+              className="h-10 sm:h-12 md:h-phi-5 lg:h-phi-6 w-auto animate-float animate-glow-pulse group-hover:scale-110 transition-transform duration-phi" 
             />
+            <span className="text-sm sm:text-phi-base md:text-phi-lg font-heading font-bold text-foreground whitespace-nowrap hidden sm:inline">
+              UpDown Robotics
+            </span>
           </Link>
           
           <div className="hidden lg:flex items-center space-x-phi-1">

@@ -66,12 +66,12 @@ const Vision = () => {
           <motion.div 
             ref={heroText.ref}
             style={{ y: heroText.y }}
-            className="text-center mb-16 animate-fade-in"
+            className="text-center mb-16 animate-fade-in px-4"
           >
-            <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-heading font-bold mb-6">
               Building India's <span className="gradient-heading">Autonomous Cleaning Future</span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
               From intelligent cleaning robots to fully autonomous building operations—
               our vision extends beyond today's challenges
             </p>

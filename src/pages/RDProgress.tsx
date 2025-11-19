@@ -46,17 +46,17 @@ const RDProgress = () => {
           <motion.div 
             ref={heroText.ref}
             style={{ y: heroText.y }}
-            className="text-center mb-16 animate-fade-in"
+            className="text-center mb-16 animate-fade-in px-4"
           >
             <div className="inline-block px-4 py-2 bg-electric-cyan/10 border border-electric-cyan/30 rounded-full mb-6">
-              <span className="text-electric-cyan font-accent font-semibold">ENGINEERING IN MOTION</span>
+              <span className="text-electric-cyan font-accent font-semibold text-xs sm:text-sm">ENGINEERING IN MOTION</span>
             </div>
             
-            <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-heading font-bold mb-6">
               UpDown Robotics <span className="gradient-heading">R&D Progress</span>
             </h1>
             
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
               Building India's first intelligent cleaning AMR from the ground up. 
               Here's where we are in our engineering journey.
             </p>
