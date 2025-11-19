@@ -84,14 +84,14 @@ export const Navigation = () => {
             </div>
           </Link>
           
-          <div className="hidden lg:flex items-center space-x-1 xl:space-x-2">
+          <div className="hidden lg:flex items-center gap-1 xl:gap-3">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 to={item.path}
                 onClick={(e) => handleNavClick(e, item.path)}
                 className={cn(
-                  "px-2 xl:px-3 py-2 text-[11px] xl:text-sm font-medium transition-all duration-300 relative group whitespace-nowrap",
+                  "px-3 xl:px-4 py-2 text-sm xl:text-base font-medium transition-all duration-300 relative group whitespace-nowrap hover:scale-105",
                   isActive(item.path) 
                     ? "text-primary" 
                     : "text-muted-foreground hover:text-primary"
