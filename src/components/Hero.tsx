@@ -2,20 +2,32 @@ import { Button } from "@/components/ui/button";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import robotOffice from "@/assets/robot-office.png";
 import { Zap } from "lucide-react";
-import { useParallax } from "@/hooks/use-parallax";
+import { useParallaxMotion, useSimpleParallax } from "@/hooks/use-parallax-motion";
+import { motion } from "framer-motion";
 
 export const Hero = () => {
-  const bgOffset = useParallax(0.3);
+  const background = useSimpleParallax(0.382);
+  const image = useParallaxMotion({ speed: 0.618 });
+  const text = useSimpleParallax(0.236);
+  const card = useParallaxMotion({ speed: 0.5 });
   
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-phi-4 pt-phi-7 pb-phi-8 bg-gradient-to-b from-background via-muted/30 to-background">
-      <div className="absolute inset-0 overflow-hidden pointer-events-none" style={{ transform: `translateY(${bgOffset}px)` }}>
+    <section className="relative min-h-screen flex items-center justify-center px-phi-4 pt-phi-7 pb-phi-8 bg-gradient-to-b from-background via-muted/30 to-background overflow-hidden">
+      <motion.div 
+        ref={background.ref}
+        style={{ y: background.y }}
+        className="absolute inset-0 overflow-hidden pointer-events-none"
+      >
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_hsl(var(--primary)/0.15),transparent_50%)]" />
-      </div>
+      </motion.div>
       
       <div className="container mx-auto relative z-10 max-w-phi-content">
         <div className="space-y-phi-5">
-          <div className="text-center space-y-phi-4 animate-fade-in">
+          <motion.div 
+            ref={text.ref}
+            style={{ y: text.y }}
+            className="text-center space-y-phi-4 animate-fade-in"
+          >
             <div className="inline-block px-phi-3 py-phi-2 bg-primary/10 border border-primary/30 rounded-full">
               <span className="text-primary font-accent font-semibold text-phi-sm md:text-phi-base">ROBOTS-AS-A-SERVICE</span>
             </div>
@@ -41,9 +53,13 @@ export const Hero = () => {
                 </Button>
               </a>
             </div>
-          </div>
+          </motion.div>
           
-          <div className="relative animate-fade-in max-w-phi-content mx-auto" style={{ animationDelay: '0.2s' }}>
+          <motion.div 
+            ref={image.ref}
+            style={{ y: image.y, scale: image.scale, animationDelay: '0.2s' }}
+            className="relative animate-fade-in max-w-phi-content mx-auto"
+          >
             <AspectRatio ratio={1.618}>
               <img 
                 src={robotOffice} 
@@ -55,17 +71,21 @@ export const Hero = () => {
                 <span className="text-phi-sm font-accent font-semibold text-primary">ACTIVE</span>
               </div>
             </AspectRatio>
-          </div>
+          </motion.div>
         </div>
 
-        <div className="mt-phi-8 mb-phi-6 text-center max-w-phi-content mx-auto animate-fade-in relative z-20" style={{ animationDelay: '0.4s' }}>
+        <motion.div 
+          ref={card.ref}
+          style={{ y: card.y, scale: card.scale, opacity: card.opacity, animationDelay: '0.4s' }}
+          className="mt-phi-8 mb-phi-6 text-center max-w-phi-content mx-auto animate-fade-in relative z-20"
+        >
           <div className="p-phi-5 bg-background border border-border rounded-2xl shadow-lg shadow-primary/30">
             <Zap className="w-phi-5 h-phi-5 text-primary mx-auto mb-phi-3" />
             <p className="text-phi-lg md:text-phi-xl text-foreground leading-relaxed">
               UpDown Robotics builds intelligent cleaning systems optimized for India's <strong className="text-primary">apartments, commercial buildings, malls, tech parks, hotels, and hospitals</strong>.
             </p>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

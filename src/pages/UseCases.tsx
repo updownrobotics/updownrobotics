@@ -2,6 +2,8 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Building2, Home, Hospital, Hotel, ShoppingBag, Plane, Briefcase, Cpu } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import { useParallaxMotion } from "@/hooks/use-parallax-motion";
+import { motion } from "framer-motion";
 
 const useCases = [
   {
@@ -57,6 +59,7 @@ const useCases = [
 const UseCases = () => {
   const gridReveal = useScrollReveal();
   const ctaReveal = useScrollReveal();
+  const heroText = useParallaxMotion({ speed: 0.382 });
   
   return (
     <main className="min-h-screen bg-gradient-to-b from-background via-muted/30 to-background">
@@ -64,7 +67,11 @@ const UseCases = () => {
       
       <section className="pt-32 pb-24 px-6">
         <div className="container mx-auto">
-          <div className="text-center mb-16 animate-fade-in">
+          <motion.div 
+            ref={heroText.ref}
+            style={{ y: heroText.y }}
+            className="text-center mb-16 animate-fade-in"
+          >
             <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6">
               Built for <span className="gradient-heading">Every Space</span>
             </h1>
@@ -72,7 +79,7 @@ const UseCases = () => {
               Our intelligent cleaning robots adapt to diverse environments across 
               India's commercial and residential infrastructure
             </p>
-          </div>
+          </motion.div>
 
           <div ref={gridReveal.ref} className={`grid md:grid-cols-2 lg:grid-cols-4 gap-6 transition-all duration-700 ${gridReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             {useCases.map((useCase, index) => (

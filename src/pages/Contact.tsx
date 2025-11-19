@@ -5,10 +5,13 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, MapPin, Phone, MessageSquare } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import { useParallaxMotion } from "@/hooks/use-parallax-motion";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   const formReveal = useScrollReveal();
   const contactInfoReveal = useScrollReveal();
+  const heroText = useParallaxMotion({ speed: 0.382 });
   
   const contactTypes = [
     { icon: MessageSquare, title: "Sales", desc: "Explore RaaS pricing and deployment", email: "sales@updownrobotics.com" },
@@ -23,14 +26,18 @@ const Contact = () => {
       <main className="pt-24 pb-16">
         {/* Hero Section */}
         <section className="container mx-auto px-4 mb-20 text-center">
-          <div className="max-w-3xl mx-auto space-y-6 animate-fade-in">
+          <motion.div 
+            ref={heroText.ref}
+            style={{ y: heroText.y }}
+            className="max-w-3xl mx-auto space-y-6 animate-fade-in"
+          >
             <h1 className="text-5xl font-bold text-foreground">
               Contact & <span className="gradient-heading">Support</span>
             </h1>
             <p className="text-xl text-muted-foreground">
               Get in touch with our team to learn more about UpDown Robotics and how we can help automate your facility maintenance.
             </p>
-          </div>
+          </motion.div>
         </section>
 
         <div className="container mx-auto px-4">

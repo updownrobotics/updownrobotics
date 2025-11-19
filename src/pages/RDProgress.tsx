@@ -4,6 +4,8 @@ import { Map, Brain, Droplet, Gauge, CheckCircle2, Code2, Cpu } from "lucide-rea
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import robotCorridor from "@/assets/robot-corridor.png";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import { useParallaxMotion } from "@/hooks/use-parallax-motion";
+import { motion } from "framer-motion";
 
 const navigationFeatures = [
   { icon: Map, title: "SLAM Mapping", status: "Validated" },
@@ -31,6 +33,8 @@ const RDProgress = () => {
   const navPlatformReveal = useScrollReveal();
   const cleaningModulesReveal = useScrollReveal();
   const engineeringReveal = useScrollReveal();
+  const heroText = useParallaxMotion({ speed: 0.382 });
+  const navImage = useParallaxMotion({ speed: 0.618 });
   
   return (
     <main className="min-h-screen bg-gradient-to-b from-background via-muted/30 to-background">
@@ -39,7 +43,11 @@ const RDProgress = () => {
       <section className="pt-32 pb-24 px-6">
         <div className="container mx-auto">
           {/* Hero */}
-          <div className="text-center mb-16 animate-fade-in">
+          <motion.div 
+            ref={heroText.ref}
+            style={{ y: heroText.y }}
+            className="text-center mb-16 animate-fade-in"
+          >
             <div className="inline-block px-4 py-2 bg-electric-cyan/10 border border-electric-cyan/30 rounded-full mb-6">
               <span className="text-electric-cyan font-accent font-semibold">ENGINEERING IN MOTION</span>
             </div>
@@ -52,7 +60,7 @@ const RDProgress = () => {
               Building India's first intelligent cleaning AMR from the ground up. 
               Here's where we are in our engineering journey.
             </p>
-          </div>
+          </motion.div>
 
           {/* Navigation Platform */}
           <div ref={navPlatformReveal.ref} className={`mb-24 transition-all duration-700 ${navPlatformReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
@@ -82,7 +90,11 @@ const RDProgress = () => {
                 </div>
               </div>
 
-              <div className="relative">
+              <motion.div 
+                ref={navImage.ref}
+                style={{ y: navImage.y, scale: navImage.scale }}
+                className="relative"
+              >
                 <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full" />
                 <AspectRatio ratio={1.618}>
                   <img 
@@ -91,7 +103,7 @@ const RDProgress = () => {
                     className="relative rounded-2xl shadow-2xl w-full h-full object-cover"
                   />
                 </AspectRatio>
-              </div>
+              </motion.div>
             </div>
           </div>
 

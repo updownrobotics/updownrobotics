@@ -4,6 +4,8 @@ import { Brain, Map, Droplet, Zap, Gauge, Cpu, Radio } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import robotOffice from "@/assets/robot-office.png";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import { useParallaxMotion } from "@/hooks/use-parallax-motion";
+import { motion } from "framer-motion";
 
 const technologies = [
   {
@@ -42,6 +44,8 @@ const Technology = () => {
   const heroImageReveal = useScrollReveal();
   const techGridReveal = useScrollReveal();
   const specsReveal = useScrollReveal();
+  const heroText = useParallaxMotion({ speed: 0.382 });
+  const heroImage = useParallaxMotion({ speed: 0.618 });
   
   return (
     <main className="min-h-screen bg-gradient-to-b from-background via-muted/30 to-background">
@@ -49,7 +53,11 @@ const Technology = () => {
       
       <section className="pt-32 pb-24 px-6">
         <div className="container mx-auto">
-          <div className="text-center mb-16 animate-fade-in">
+          <motion.div 
+            ref={heroText.ref}
+            style={{ y: heroText.y }}
+            className="text-center mb-16 animate-fade-in"
+          >
             <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6">
               The Technology Behind <span className="gradient-heading">Intelligent Cleaning</span>
             </h1>
@@ -57,10 +65,14 @@ const Technology = () => {
               Cutting-edge robotics, AI, and mechanical engineering converge to create 
               India's most advanced cleaning solution
             </p>
-          </div>
+          </motion.div>
 
           {/* Hero Image Section */}
-          <div ref={heroImageReveal.ref} className={`mb-24 relative transition-all duration-700 ${heroImageReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <motion.div 
+            ref={heroImage.ref}
+            style={{ y: heroImage.y, scale: heroImage.scale }}
+            className={`mb-24 relative transition-all duration-700 ${heroImageReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+          >
             <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full" />
             <div className="max-w-4xl mx-auto">
               <AspectRatio ratio={1.618}>
@@ -74,7 +86,7 @@ const Technology = () => {
             
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 border-2 border-primary/30 rounded-full animate-glow-pulse" />
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 border-2 border-primary/20 rounded-full animate-glow-pulse" style={{ animationDelay: "0.5s" }} />
-          </div>
+          </motion.div>
 
           {/* Technology Grid */}
           <div ref={techGridReveal.ref} className={`grid md:grid-cols-2 lg:grid-cols-3 gap-8 transition-all duration-700 ${techGridReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
