@@ -72,7 +72,7 @@ export const Navigation = () => {
             <img 
               src={logo} 
               alt="UpDown Robotics Logo" 
-              className="h-10 sm:h-12 md:h-phi-5 lg:h-phi-6 w-auto animate-float animate-glow-pulse group-hover:scale-110 transition-transform duration-phi" 
+              className="h-10 sm:h-12 md:h-phi-5 lg:h-phi-6 w-auto animate-float group-hover:scale-110"
             />
             <div className="flex flex-col leading-tight">
               <span className="text-xs sm:text-sm md:text-phi-base lg:text-phi-lg font-heading font-bold text-foreground whitespace-nowrap">
