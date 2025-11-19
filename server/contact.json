@@ -1,0 +1,15 @@
+[
+  {
+    "name": "Test User",
+    "email": "test@example.com",
+    "message": "Hello!",
+    "submittedAt": "2025-11-19T08:32:49.646Z"
+  },
+  {
+    "name": "RAGHU RAMI REDDY",
+    "email": "rramireddy95@gmail.com",
+    "company": "test 2",
+    "message": "test 3\n",
+    "submittedAt": "2025-11-19T08:45:07.392Z"
+  }
+]

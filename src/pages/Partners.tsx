@@ -87,11 +87,8 @@ const Partners = () => {
               Let's build the future of autonomous cleaning together
             </p>
             <a href="/contact">
-              <Button 
-                size="lg"
-                className="shadow-lg shadow-primary/30 hover:shadow-primary/50 transition-all duration-300 animate-pulse-slow"
-              >
-                Partner With Us
+              <Button asChild size="lg" className="shadow-lg shadow-primary/30 hover:shadow-primary/50 transition-all duration-300 animate-pulse-slow">
+                <a href="/contact">Partner With Us</a>
               </Button>
             </a>
           </div>

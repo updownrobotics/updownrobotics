@@ -8,6 +8,7 @@ const robotApartment = "/images_opt/assets/robot-apartment.webp";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { useParallaxMotion } from "@/hooks/use-parallax-motion";
 import { motion } from "framer-motion";
+import { AccessibleImage } from "@/components/ui/accessible-image";
 
 const timeline = [
   {
@@ -87,7 +88,7 @@ const Vision = () => {
               </p>
               <div>
                 <AspectRatio ratio={1.618}>
-                  <img 
+                  <AccessibleImage 
                     src={robotApartment} 
                     alt="Future Vision" 
                     className="rounded-xl shadow-lg w-full h-full object-cover"
@@ -106,7 +107,7 @@ const Vision = () => {
               </p>
               <div>
                 <AspectRatio ratio={1.618}>
-                  <img 
+                  <AccessibleImage 
                     src={robotDelivery} 
                     alt="Delivery Evolution" 
                     className="rounded-xl shadow-lg w-full h-full object-cover"

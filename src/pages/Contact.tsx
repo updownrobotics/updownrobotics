@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -9,6 +10,10 @@ import { useParallaxMotion } from "@/hooks/use-parallax-motion";
 import { motion } from "framer-motion";
 
 const Contact = () => {
+  // Apps Script endpoint (deployed web app) and shared secret
+  const APPS_SCRIPT_URL = "https://script.google.com/a/macros/updownrobotics.com/s/AKfycbwnKHwDApzYLZr0tZ-sVnDLNbuhya-ODW14fMsmV3xr89eL5iItXrtx-avf8AXMDmNCVA/exec";
+  const APPS_SECRET = "X9f7sGQk2bLwPz1vR8uY";
+
   const formReveal = useScrollReveal();
   const contactInfoReveal = useScrollReveal();
   const heroText = useParallaxMotion({ speed: 0.382 });
@@ -19,10 +24,40 @@ const Contact = () => {
     { icon: Phone, title: "Media", desc: "Press releases and media kits", email: "media@updownrobotics.com" },
   ];
 
+  // State for form fields and feedback
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    company: "",
+    message: ""
+  });
+  const [status, setStatus] = useState<null | "success" | "error" | "loading">(null);
+
+  // Handle form submission
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("loading");
+    try {
+      const body = new URLSearchParams({ secret: APPS_SECRET, source: "contact", ...form }).toString();
+      const res = await fetch(APPS_SCRIPT_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body
+      });
+      if (res.ok) {
+        setStatus("success");
+        setForm({ name: "", email: "", company: "", message: "" });
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
-      
       <main className="pt-24 pb-16">
         {/* Hero Section */}
         <section className="container mx-auto px-4 mb-20 text-center">
@@ -46,48 +81,65 @@ const Contact = () => {
             <div ref={formReveal.ref} className={`transition-all duration-700 ${formReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               <div className="bg-card p-8 rounded-lg border border-border shadow-[0_0_30px_rgba(0,178,255,0.1)]">
                 <h2 className="text-2xl font-bold text-foreground mb-6">Send us a Message</h2>
-                <form className="space-y-6">
+                <form className="space-y-6" onSubmit={handleSubmit}>
                   <div>
                     <label className="text-sm text-muted-foreground mb-2 block">Name</label>
-                    <Input 
-                      placeholder="Your full name" 
+                    <Input
+                      required
+                      value={form.name}
+                      onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
+                      placeholder="Your full name"
                       className="bg-background border-border focus:border-primary transition-colors"
                     />
                   </div>
                   <div>
                     <label className="text-sm text-muted-foreground mb-2 block">Email</label>
-                    <Input 
-                      type="email" 
-                      placeholder="you@company.com" 
+                    <Input
+                      required
+                      type="email"
+                      value={form.email}
+                      onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
+                      placeholder="you@company.com"
                       className="bg-background border-border focus:border-primary transition-colors"
                     />
                   </div>
                   <div>
                     <label className="text-sm text-muted-foreground mb-2 block">Company</label>
-                    <Input 
-                      placeholder="Your company name" 
+                    <Input
+                      value={form.company}
+                      onChange={e => setForm(f => ({ ...f, company: e.target.value }))}
+                      placeholder="Your company name"
                       className="bg-background border-border focus:border-primary transition-colors"
                     />
                   </div>
                   <div>
                     <label className="text-sm text-muted-foreground mb-2 block">Message</label>
-                    <Textarea 
-                      placeholder="Tell us about your project..." 
+                    <Textarea
+                      required
+                      value={form.message}
+                      onChange={e => setForm(f => ({ ...f, message: e.target.value }))}
+                      placeholder="Tell us about your project..."
                       rows={6}
                       className="bg-background border-border focus:border-primary transition-colors resize-none"
                     />
                   </div>
-                  <Button 
+                  <Button
                     type="submit"
                     size="lg"
                     className="w-full bg-primary text-primary-foreground hover:bg-primary/90 shadow-[0_0_20px_rgba(0,178,255,0.5)] hover:shadow-[0_0_30px_rgba(0,178,255,0.7)] transition-all duration-300"
+                    disabled={status === "loading"}
                   >
-                    Send Message
+                    {status === "loading" ? "Sending..." : "Send Message"}
                   </Button>
+                  {status === "success" && (
+                    <div className="text-green-600 font-semibold text-center">Message sent successfully!</div>
+                  )}
+                  {status === "error" && (
+                    <div className="text-red-600 font-semibold text-center">Failed to send. Please try again.</div>
+                  )}
                 </form>
               </div>
             </div>
-
             {/* Contact Info */}
             <div ref={contactInfoReveal.ref} className={`space-y-6 transition-all duration-700 ${contactInfoReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               {/* Headquarters */}

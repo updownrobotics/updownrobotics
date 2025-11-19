@@ -1,10 +1,40 @@
+import { useState } from "react";
 import { MapPin, Mail, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Link } from "react-router-dom";
 const logo = "/images_opt/assets/logo.webp";
 
+// Apps Script endpoint and shared secret (update Apps Script with the same secret)
+const APPS_SCRIPT_URL = "https://script.google.com/a/macros/updownrobotics.com/s/AKfycbwnKHwDApzYLZr0tZ-sVnDLNbuhya-ODW14fMsmV3xr89eL5iItXrtx-avf8AXMDmNCVA/exec";
+const APPS_SECRET = "X9f7sGQk2bLwPz1vR8uY";
+
 export const Footer = () => {
+  // Newsletter state and handler
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<null | "success" | "error" | "loading">(null);
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("loading");
+    try {
+      const body = new URLSearchParams({ secret: APPS_SECRET, source: "newsletter", email }).toString();
+      const res = await fetch(APPS_SCRIPT_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body
+      });
+      if (res.ok) {
+        setStatus("success");
+        setEmail("");
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
+  };
+
   return (
     <footer className="bg-graphite border-t border-border">
       <div className="container mx-auto px-phi-4 py-phi-6">
@@ -34,7 +64,6 @@ export const Footer = () => {
               </div>
             </div>
           </div>
-          
           <div>
             <h4 className="font-semibold mb-phi-3 text-phi-lg">Solutions</h4>
             <ul className="space-y-phi-2">
@@ -44,7 +73,6 @@ export const Footer = () => {
               <li><Link to="/products" className="text-phi-sm text-muted-foreground hover:text-primary transition-colors">Products</Link></li>
             </ul>
           </div>
-          
           <div>
             <h4 className="font-semibold mb-phi-3 text-phi-lg">Company</h4>
             <ul className="space-y-phi-2">
@@ -55,25 +83,37 @@ export const Footer = () => {
             </ul>
           </div>
         </div>
-        
         <div className="pt-phi-5 border-t border-border space-y-phi-5">
           <div className="max-w-md">
             <h4 className="font-semibold mb-phi-3 text-phi-lg">Join Our Newsletter</h4>
             <p className="text-phi-sm text-muted-foreground mb-phi-3">
               Stay updated on the latest in robotics automation and RaaS innovation.
             </p>
-            <div className="flex gap-phi-2">
-              <Input 
-                type="email" 
-                placeholder="Enter your email" 
+            <form className="flex gap-phi-2" onSubmit={handleSubscribe}>
+              <Input
+                type="email"
+                required
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+                placeholder="Enter your email"
                 className="bg-card border-border focus:border-primary text-phi-base"
+                disabled={status === "loading"}
               />
-              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 text-phi-sm">
-                Subscribe
+              <Button
+                type="submit"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 text-phi-sm"
+                disabled={status === "loading"}
+              >
+                {status === "loading" ? "Subscribing..." : "Subscribe"}
               </Button>
-            </div>
+            </form>
+            {status === "success" && (
+              <div className="text-green-600 font-semibold mt-2">Subscribed successfully!</div>
+            )}
+            {status === "error" && (
+              <div className="text-red-600 font-semibold mt-2">Failed to subscribe. Please try again.</div>
+            )}
           </div>
-          
           <div className="flex flex-col md:flex-row justify-between items-center gap-phi-3">
             <p className="text-phi-sm text-muted-foreground">
               © 2025 UpDown Robotics. All rights reserved.

@@ -2,6 +2,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { AccessibleImage } from "@/components/ui/accessible-image";
 import { CheckCircle, Zap, Brain, Shield, Gauge, AlertCircle } from "lucide-react";
 const robotOffice = "/images_opt/assets/robot-office.webp";
 const robotMall = "/images_opt/assets/robot-mall.webp";
@@ -89,7 +90,7 @@ const Products = () => {
                   <picture>
                     <source srcSet="/images_opt/assets/robot-office.avif" type="image/avif" />
                     <source srcSet="/images_opt/assets/robot-office.webp" type="image/webp" />
-                    <img src="/images_opt/assets/robot-office.jpg" alt="5-in-1 Smart Cleaning Robot" className="rounded-2xl shadow-2xl w-full h-full object-cover" />
+                    <AccessibleImage src="/images_opt/assets/robot-office.jpg" alt="5-in-1 Smart Cleaning Robot" className="rounded-2xl shadow-2xl w-full h-full object-cover" />
                   </picture>
                 </AspectRatio>
               </div>
@@ -103,7 +104,7 @@ const Products = () => {
                 className="relative"
               >
                 <AspectRatio ratio={1.618}>
-                  <img 
+                  <AccessibleImage 
                     src={robotMall} 
                     alt="Autonomous Cleaning Robot" 
                     className="rounded-2xl shadow-2xl w-full h-full object-cover"

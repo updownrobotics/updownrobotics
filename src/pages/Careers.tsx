@@ -2,6 +2,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { AccessibleImage } from "@/components/ui/accessible-image";
 const robotCorridor = "/images_opt/assets/robot-corridor.webp";
 import { Cpu, Code, Brain, Palette, Briefcase, Lightbulb } from "lucide-react";
 
@@ -72,7 +73,7 @@ const Careers = () => {
             </div>
             <div className="relative">
               <AspectRatio ratio={1.618}>
-                <img 
+                <AccessibleImage 
                   src={robotCorridor} 
                   alt="Engineer with UpDown Robot" 
                   className="w-full h-full object-cover rounded-lg shadow-[0_0_50px_rgba(23,162,184,0.3)]"

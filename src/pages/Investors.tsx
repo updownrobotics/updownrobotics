@@ -3,6 +3,7 @@ import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { TrendingUp, Target, Code2, Layers, Globe } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { AccessibleImage } from "@/components/ui/accessible-image";
 const robotMall = "/images_opt/assets/robot-mall.webp";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { useParallaxMotion } from "@/hooks/use-parallax-motion";
@@ -63,7 +64,7 @@ const Investors = () => {
             className={`mb-20 relative transition-all duration-700 ${imageReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
           >
             <AspectRatio ratio={1.618}>
-              <img 
+              <AccessibleImage 
                 src={robotMall} 
                 alt="UpDown Robotics Technology" 
                 className="rounded-2xl shadow-2xl mx-auto w-full h-full object-cover"

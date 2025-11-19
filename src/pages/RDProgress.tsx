@@ -6,6 +6,7 @@ const robotCorridor = "/images_opt/assets/robot-corridor.webp";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { useParallaxMotion } from "@/hooks/use-parallax-motion";
 import { motion } from "framer-motion";
+import { AccessibleImage } from "@/components/ui/accessible-image";
 
 const navigationFeatures = [
   { icon: Map, title: "SLAM Mapping", status: "Validated" },
@@ -94,7 +95,7 @@ const RDProgress = () => {
               >
                 <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full" />
                 <AspectRatio ratio={1.618}>
-                  <img 
+                  <AccessibleImage 
                     src={robotCorridor} 
                     alt="Navigation Testing" 
                     className="relative rounded-2xl shadow-2xl w-full h-full object-cover"

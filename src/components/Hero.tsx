@@ -41,16 +41,12 @@ export const Hero = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-phi-2 sm:gap-phi-3 justify-center px-phi-2">
-              <a href="/pilot-program" className="w-full sm:w-auto">
-                <Button size="lg" className="w-full sm:w-auto text-phi-sm sm:text-phi-base md:text-phi-lg px-phi-3 sm:px-phi-5 bg-gradient-to-r from-primary to-teal-light hover:shadow-lg hover:shadow-primary/50 transition-all">
-                  Join Pilot Program
-                </Button>
-              </a>
-              <a href="/contact" className="w-full sm:w-auto">
-                <Button size="lg" variant="outline" className="w-full sm:w-auto text-phi-sm sm:text-phi-base md:text-phi-lg px-phi-3 sm:px-phi-5 border-primary/50 hover:bg-primary/10">
-                  Get Early Updates
-                </Button>
-              </a>
+              <Button asChild size="lg" className="w-full sm:w-auto text-phi-sm sm:text-phi-base md:text-phi-lg px-phi-3 sm:px-phi-5 bg-gradient-to-r from-primary to-teal-light hover:shadow-lg hover:shadow-primary/50 transition-all">
+                <a href="/pilot-program">Join Pilot Program</a>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="w-full sm:w-auto text-phi-sm sm:text-phi-base md:text-phi-lg px-phi-3 sm:px-phi-5 border-primary/50 hover:bg-primary/10">
+                <a href="/contact">Get Early Updates</a>
+              </Button>
             </div>
           </motion.div>
           
