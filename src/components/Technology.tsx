@@ -1,4 +1,5 @@
 import robotOffice from "@/assets/robot-office.png";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Brain, Map, Droplet, Zap } from "lucide-react";
 
 const features = [
@@ -31,11 +32,13 @@ export const Technology = () => {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="relative order-2 lg:order-1">
             <div className="absolute -inset-4 bg-primary/10 rounded-3xl blur-2xl" />
-            <img 
-              src={robotOffice} 
-              alt="UpDown Robot with advanced technology" 
-              className="relative rounded-2xl shadow-2xl"
-            />
+            <AspectRatio ratio={1.618}>
+              <img 
+                src={robotOffice} 
+                alt="UpDown Robot with advanced technology" 
+                className="relative rounded-2xl shadow-2xl w-full h-full object-cover"
+              />
+            </AspectRatio>
             
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 border-2 border-primary/30 rounded-full animate-glow-pulse" />
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 border-2 border-primary/20 rounded-full animate-glow-pulse" style={{ animationDelay: "0.5s" }} />

@@ -1,5 +1,6 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 import robotOffice from "@/assets/robot-office.png";
 import { Lightbulb, Wrench, Rocket, Trophy } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
@@ -37,11 +38,13 @@ const About = () => {
               </p>
             </div>
             <div className="relative">
-              <img 
-                src={robotOffice} 
-                alt="UpDown Robot in Workshop" 
-                className="w-full rounded-lg shadow-[0_0_50px_rgba(0,178,255,0.3)]"
-              />
+              <AspectRatio ratio={1.618}>
+                <img 
+                  src={robotOffice} 
+                  alt="UpDown Robot in Workshop" 
+                  className="w-full h-full object-cover rounded-lg shadow-[0_0_50px_rgba(23,162,184,0.3)]"
+                />
+              </AspectRatio>
             </div>
           </div>
         </section>

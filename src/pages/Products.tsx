@@ -1,6 +1,7 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { CheckCircle, Zap, Brain, Shield, Gauge, AlertCircle } from "lucide-react";
 import robotOffice from "@/assets/robot-office.png";
 import robotMall from "@/assets/robot-mall.png";
@@ -26,7 +27,7 @@ const Products = () => {
   const disclaimerReveal = useScrollReveal();
   
   return (
-    <main className="min-h-screen bg-gradient-to-b from-deep-black to-background">
+    <main className="min-h-screen bg-gradient-to-b from-background via-muted/30 to-background">
       <Navigation />
       
       <section className="pt-phi-8 pb-phi-6 px-phi-4">
@@ -75,11 +76,13 @@ const Products = () => {
               </div>
 
               <div className="order-1 lg:order-2 relative">
-                <img 
-                  src={robotOffice} 
-                  alt="5-in-1 Smart Cleaning Robot" 
-                  className="rounded-2xl shadow-2xl"
-                />
+                <AspectRatio ratio={1.618}>
+                  <img 
+                    src={robotOffice} 
+                    alt="5-in-1 Smart Cleaning Robot" 
+                    className="rounded-2xl shadow-2xl w-full h-full object-cover"
+                  />
+                </AspectRatio>
               </div>
             </div>
           </div>
@@ -88,11 +91,13 @@ const Products = () => {
           <div ref={version2Reveal.ref} className={`transition-all duration-700 ${version2Reveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="grid lg:grid-cols-2 gap-phi-5 items-center">
               <div className="relative">
-                <img 
-                  src={robotMall} 
-                  alt="Autonomous Cleaning Robot" 
-                  className="rounded-2xl shadow-2xl"
-                />
+                <AspectRatio ratio={1.618}>
+                  <img 
+                    src={robotMall} 
+                    alt="Autonomous Cleaning Robot" 
+                    className="rounded-2xl shadow-2xl w-full h-full object-cover"
+                  />
+                </AspectRatio>
               </div>
 
               <div className="space-y-phi-4">

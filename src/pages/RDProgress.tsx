@@ -1,6 +1,7 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Map, Brain, Droplet, Gauge, CheckCircle2, Code2, Cpu } from "lucide-react";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 import robotCorridor from "@/assets/robot-corridor.png";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
@@ -32,7 +33,7 @@ const RDProgress = () => {
   const engineeringReveal = useScrollReveal();
   
   return (
-    <main className="min-h-screen bg-gradient-to-b from-deep-black to-background">
+    <main className="min-h-screen bg-gradient-to-b from-background via-muted/30 to-background">
       <Navigation />
       
       <section className="pt-32 pb-24 px-6">
@@ -83,11 +84,13 @@ const RDProgress = () => {
 
               <div className="relative">
                 <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full" />
-                <img 
-                  src={robotCorridor} 
-                  alt="Navigation Testing" 
-                  className="relative rounded-2xl shadow-2xl"
-                />
+                <AspectRatio ratio={1.618}>
+                  <img 
+                    src={robotCorridor} 
+                    alt="Navigation Testing" 
+                    className="relative rounded-2xl shadow-2xl w-full h-full object-cover"
+                  />
+                </AspectRatio>
               </div>
             </div>
           </div>

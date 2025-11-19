@@ -2,6 +2,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Rocket, Target, TrendingUp, Zap } from "lucide-react";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 import robotDelivery from "@/assets/robot-delivery.png";
 import robotApartment from "@/assets/robot-apartment.png";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
@@ -51,7 +52,7 @@ const Vision = () => {
   const ctaReveal = useScrollReveal();
   
   return (
-    <main className="min-h-screen bg-gradient-to-b from-deep-black to-background">
+    <main className="min-h-screen bg-gradient-to-b from-background via-muted/30 to-background">
       <Navigation />
       
       <section className="pt-32 pb-24 px-6">
@@ -77,11 +78,13 @@ const Vision = () => {
                 buildings are maintained. We envision a future where intelligent robots 
                 handle repetitive tasks, allowing humans to focus on what matters most.
               </p>
-              <img 
-                src={robotApartment} 
-                alt="Future Vision" 
-                className="rounded-xl shadow-lg"
-              />
+              <AspectRatio ratio={1.618}>
+                <img 
+                  src={robotApartment} 
+                  alt="Future Vision" 
+                  className="rounded-xl shadow-lg w-full h-full object-cover"
+                />
+              </AspectRatio>
             </div>
 
             <div className="relative overflow-hidden bg-card border border-border rounded-2xl p-8">
@@ -92,11 +95,13 @@ const Vision = () => {
                 security patrols, and facility inspections—making our robots the Swiss Army 
                 knife of building operations.
               </p>
-              <img 
-                src={robotDelivery} 
-                alt="Delivery Evolution" 
-                className="rounded-xl shadow-lg"
-              />
+              <AspectRatio ratio={1.618}>
+                <img 
+                  src={robotDelivery} 
+                  alt="Delivery Evolution" 
+                  className="rounded-xl shadow-lg w-full h-full object-cover"
+                />
+              </AspectRatio>
             </div>
           </div>
 

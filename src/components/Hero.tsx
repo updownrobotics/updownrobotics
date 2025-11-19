@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 import robotOffice from "@/assets/robot-office.png";
 import { Zap } from "lucide-react";
 import { useParallax } from "@/hooks/use-parallax";
@@ -7,7 +8,7 @@ export const Hero = () => {
   const bgOffset = useParallax(0.3);
   
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-phi-4 pt-phi-7 pb-phi-8 bg-gradient-to-b from-deep-black via-background to-background">
+    <section className="relative min-h-screen flex items-center justify-center px-phi-4 pt-phi-7 pb-phi-8 bg-gradient-to-b from-background via-muted/30 to-background">
       <div className="absolute inset-0 overflow-hidden pointer-events-none" style={{ transform: `translateY(${bgOffset}px)` }}>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_hsl(var(--primary)/0.15),transparent_50%)]" />
       </div>
@@ -43,13 +44,17 @@ export const Hero = () => {
           </div>
           
           <div className="relative animate-fade-in max-w-phi-content mx-auto" style={{ animationDelay: '0.2s' }}>
-            <div className="relative">
-              <img src={robotOffice} alt="UpDown Intelligent Cleaning Robot" className="w-full h-auto rounded-2xl shadow-2xl shadow-primary/20" />
+            <AspectRatio ratio={1.618}>
+              <img 
+                src={robotOffice} 
+                alt="UpDown Intelligent Cleaning Robot" 
+                className="w-full h-full object-cover rounded-2xl shadow-2xl shadow-primary/20" 
+              />
               <div className="absolute top-phi-3 right-phi-3 flex items-center gap-phi-2 px-phi-3 py-phi-2 bg-card/80 backdrop-blur-sm border border-primary/30 rounded-full">
                 <div className="w-phi-2 h-phi-2 bg-primary rounded-full animate-pulse" />
                 <span className="text-phi-sm font-accent font-semibold text-primary">ACTIVE</span>
               </div>
-            </div>
+            </AspectRatio>
           </div>
         </div>
 

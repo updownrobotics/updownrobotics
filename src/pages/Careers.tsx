@@ -1,6 +1,7 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 import robotCorridor from "@/assets/robot-corridor.png";
 import { Cpu, Code, Brain, Palette, Briefcase, Lightbulb } from "lucide-react";
 
@@ -70,11 +71,13 @@ const Careers = () => {
               </Button>
             </div>
             <div className="relative">
-              <img 
-                src={robotCorridor} 
-                alt="Engineer with UpDown Robot" 
-                className="w-full rounded-lg shadow-[0_0_50px_rgba(0,178,255,0.3)]"
-              />
+              <AspectRatio ratio={1.618}>
+                <img 
+                  src={robotCorridor} 
+                  alt="Engineer with UpDown Robot" 
+                  className="w-full h-full object-cover rounded-lg shadow-[0_0_50px_rgba(23,162,184,0.3)]"
+                />
+              </AspectRatio>
             </div>
           </div>
         </section>

@@ -59,7 +59,7 @@ const UseCases = () => {
   const ctaReveal = useScrollReveal();
   
   return (
-    <main className="min-h-screen bg-gradient-to-b from-deep-black to-background">
+    <main className="min-h-screen bg-gradient-to-b from-background via-muted/30 to-background">
       <Navigation />
       
       <section className="pt-32 pb-24 px-6">
