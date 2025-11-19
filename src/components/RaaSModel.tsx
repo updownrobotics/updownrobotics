@@ -1,4 +1,5 @@
 import robotMall from "@/assets/robot-mall.png";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Calendar, Monitor, Battery, Cloud } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -43,12 +44,14 @@ export const RaaSModel = () => {
           </h2>
         </div>
         
-        <div className="mb-16">
-          <img 
-            src={robotMall} 
-            alt="UpDown Robot fleet in operation" 
-            className="w-full max-w-4xl mx-auto rounded-2xl shadow-2xl"
-          />
+        <div className="mb-phi-6">
+          <AspectRatio ratio={1.618}>
+            <img 
+              src={robotMall} 
+              alt="UpDown Robot fleet in operation" 
+              className="w-full h-full object-cover rounded-2xl shadow-2xl"
+            />
+          </AspectRatio>
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">

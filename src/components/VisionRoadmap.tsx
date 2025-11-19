@@ -1,5 +1,6 @@
 import robotDelivery from "@/assets/robot-delivery.png";
 import robotCorridor from "@/assets/robot-corridor.png";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 const timeline = [
   { year: "2025", milestone: "Prototype & Pilot Testing" },
@@ -20,36 +21,36 @@ export const VisionRoadmap = () => {
         </div>
         
         <div className="grid lg:grid-cols-2 gap-12 mb-16">
-          <div className="space-y-8">
-            <div className="relative">
+          <div className="space-y-phi-4">
+            <AspectRatio ratio={1.618}>
               <img 
                 src={robotCorridor} 
                 alt="Vision of autonomous robots" 
-                className="rounded-2xl shadow-2xl"
+                className="rounded-2xl shadow-2xl w-full h-full object-cover"
               />
-            </div>
+            </AspectRatio>
             
-            <div className="space-y-4">
-              <h3 className="text-2xl font-bold">Our Vision</h3>
-              <p className="text-lg text-muted-foreground leading-relaxed">
+            <div className="space-y-phi-2">
+              <h3 className="text-phi-2xl font-bold">Our Vision</h3>
+              <p className="text-phi-lg text-muted-foreground leading-relaxed">
                 We envision autonomous cleaning fleets replacing manual labor — maintaining 
                 spotless environments while enabling humans to focus on higher-value work.
               </p>
             </div>
           </div>
           
-          <div className="space-y-8">
-            <div className="relative">
+          <div className="space-y-phi-4">
+            <AspectRatio ratio={1.618}>
               <img 
                 src={robotDelivery} 
                 alt="Future delivery capabilities" 
-                className="rounded-2xl shadow-2xl"
+                className="rounded-2xl shadow-2xl w-full h-full object-cover"
               />
-            </div>
+            </AspectRatio>
             
-            <div className="space-y-4">
-              <h3 className="text-2xl font-bold">Delivery Add-On Evolution</h3>
-              <p className="text-lg text-muted-foreground leading-relaxed">
+            <div className="space-y-phi-2">
+              <h3 className="text-phi-2xl font-bold">Delivery Add-On Evolution</h3>
+              <p className="text-phi-lg text-muted-foreground leading-relaxed">
                 Our next evolution turns each robot into a delivery unit capable of transporting 
                 items floor-to-floor using smart trays and secure compartments.
               </p>

@@ -2,6 +2,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { TrendingUp, Target, Code2, Layers, Globe } from "lucide-react";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 import robotMall from "@/assets/robot-mall.png";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
@@ -34,7 +35,7 @@ const Investors = () => {
   const thesisReveal = useScrollReveal();
   
   return (
-    <main className="min-h-screen bg-gradient-to-b from-deep-black to-background">
+    <main className="min-h-screen bg-gradient-to-b from-background via-muted/30 to-background">
       <Navigation />
       
       <section className="pt-32 pb-24 px-6">
@@ -52,11 +53,13 @@ const Investors = () => {
 
           {/* Image */}
           <div ref={imageReveal.ref} className={`mb-20 relative transition-all duration-700 ${imageReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            <img 
-              src={robotMall} 
-              alt="UpDown Robotics Technology" 
-              className="rounded-2xl shadow-2xl mx-auto"
-            />
+            <AspectRatio ratio={1.618}>
+              <img 
+                src={robotMall} 
+                alt="UpDown Robotics Technology" 
+                className="rounded-2xl shadow-2xl mx-auto w-full h-full object-cover"
+              />
+            </AspectRatio>
           </div>
 
           {/* Highlights */}
