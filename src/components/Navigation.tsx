@@ -61,7 +61,7 @@ export const Navigation = () => {
       )}
     >
       <div className="container mx-auto px-4 lg:px-6 xl:px-8">
-        <div className="flex items-center justify-between h-20 gap-4">
+        <div className="flex items-center justify-between h-[80px] gap-4">
 
           <Link 
             to="/" 
@@ -94,40 +94,46 @@ export const Navigation = () => {
             </div>
           </Link>
           
-          {/* Desktop Menu: ≥1440px with 32px spacing, 1024-1439px with tighter spacing */}
-          <div className="hidden lg:flex flex-1 items-center justify-center gap-4 lg:gap-6 xl:gap-8">
-            {navItems.map((item) => {
-              const isPilotProgram = item.name === "Pilot Program";
-              return (
-                <Link
-                  key={item.name}
-                  to={item.path}
-                  onClick={(e) => handleNavClick(e, item.path)}
-                  className={cn(
-                    "relative group whitespace-nowrap transition-all duration-150",
-                    "text-[11px] lg:text-xs xl:text-sm font-medium",
-                    "px-2 lg:px-3 py-2",
-                    isPilotProgram && "bg-primary text-white rounded-md px-4 hover:bg-primary/90",
-                    !isPilotProgram && (isActive(item.path) 
-                      ? "text-primary" 
-                      : scrolled || !isHomePage ? "text-muted-foreground hover:text-primary" : "text-white/90 hover:text-white"
-                    )
-                  )}
-                >
-                  {item.name}
-                  {!isPilotProgram && (
-                    <span
-                      className={cn(
-                        "absolute bottom-0 left-[15%] w-[70%] h-0.5 bg-primary transition-all duration-150",
-                        isActive(item.path) 
-                          ? "opacity-100 scale-x-100" 
-                          : "opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100"
-                      )}
-                    />
-                  )}
-                </Link>
-              );
-            })}
+          {/* Desktop Menu: ≥1024px */}
+          <div className="hidden lg:flex items-center flex-1 justify-end">
+            <div className="flex items-center gap-5 2xl:gap-8 mx-auto">
+              {navItems.map((item) => {
+                const isPilotProgram = item.name === "Pilot Program";
+                return (
+                  <Link
+                    key={item.name}
+                    to={item.path}
+                    onClick={(e) => handleNavClick(e, item.path)}
+                    className={cn(
+                      "relative group whitespace-nowrap transition-all duration-150",
+                      "text-[13px] 2xl:text-sm font-medium",
+                      "px-3 2xl:px-4 py-2",
+                      isPilotProgram && "border-2 rounded-md",
+                      isPilotProgram && (scrolled || !isHomePage) && "border-primary text-primary hover:bg-primary/10",
+                      isPilotProgram && !scrolled && isHomePage && "border-white text-white hover:bg-white/10",
+                      !isPilotProgram && (isActive(item.path) 
+                        ? "text-primary" 
+                        : scrolled || !isHomePage 
+                          ? "text-gray-700 hover:text-primary" 
+                          : "text-white hover:text-accent [text-shadow:_0_1px_3px_rgb(0_0_0_/_40%)]"
+                      )
+                    )}
+                  >
+                    {item.name}
+                    {!isPilotProgram && (
+                      <span
+                        className={cn(
+                          "absolute bottom-0 left-[15%] w-[70%] h-0.5 bg-primary transition-all duration-150",
+                          isActive(item.path) 
+                            ? "opacity-100 scale-x-100" 
+                            : "opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100"
+                        )}
+                      />
+                    )}
+                  </Link>
+                );
+              })}
+            </div>
           </div>
 
           {/* Tablet & Mobile Menu */}
