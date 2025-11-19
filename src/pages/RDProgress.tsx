@@ -34,7 +34,6 @@ const RDProgress = () => {
   const cleaningModulesReveal = useScrollReveal();
   const engineeringReveal = useScrollReveal();
   const heroText = useParallaxMotion({ speed: 0.382 });
-  const navImage = useParallaxMotion({ speed: 0.618 });
   
   return (
     <main className="min-h-screen bg-gradient-to-b from-background via-muted/30 to-background">
@@ -90,9 +89,7 @@ const RDProgress = () => {
                 </div>
               </div>
 
-              <motion.div 
-                ref={navImage.ref}
-                style={{ y: navImage.y, scale: navImage.scale }}
+              <div 
                 className="relative"
               >
                 <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full" />
@@ -103,7 +100,7 @@ const RDProgress = () => {
                     className="relative rounded-2xl shadow-2xl w-full h-full object-cover"
                   />
                 </AspectRatio>
-              </motion.div>
+              </div>
             </div>
           </div>
 

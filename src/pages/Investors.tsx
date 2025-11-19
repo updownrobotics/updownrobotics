@@ -36,7 +36,6 @@ const Investors = () => {
   const highlightsReveal = useScrollReveal();
   const thesisReveal = useScrollReveal();
   const heroText = useParallaxMotion({ speed: 0.382 });
-  const heroImage = useParallaxMotion({ speed: 0.618 });
   
   return (
     <main className="min-h-screen bg-gradient-to-b from-background via-muted/30 to-background">
@@ -60,9 +59,7 @@ const Investors = () => {
           </motion.div>
 
           {/* Image */}
-          <motion.div 
-            ref={heroImage.ref}
-            style={{ y: heroImage.y, scale: heroImage.scale }}
+          <div 
             className={`mb-20 relative transition-all duration-700 ${imageReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
           >
             <AspectRatio ratio={1.618}>
@@ -72,7 +69,7 @@ const Investors = () => {
                 className="rounded-2xl shadow-2xl mx-auto w-full h-full object-cover"
               />
             </AspectRatio>
-          </motion.div>
+          </div>
 
           {/* Highlights */}
           <div ref={highlightsReveal.ref} className={`grid md:grid-cols-2 gap-8 mb-20 transition-all duration-700 ${highlightsReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>

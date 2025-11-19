@@ -74,9 +74,14 @@ export const Navigation = () => {
               alt="UpDown Robotics Logo" 
               className="h-10 sm:h-12 md:h-phi-5 lg:h-phi-6 w-auto animate-float animate-glow-pulse group-hover:scale-110 transition-transform duration-phi" 
             />
-            <span className="text-sm sm:text-phi-base md:text-phi-lg font-heading font-bold text-foreground whitespace-nowrap hidden sm:inline">
-              UpDown Robotics
-            </span>
+            <div className="flex flex-col leading-tight">
+              <span className="text-xs sm:text-sm md:text-phi-base lg:text-phi-lg font-heading font-bold text-foreground whitespace-nowrap">
+                UpDown
+              </span>
+              <span className="text-xs sm:text-sm md:text-phi-base lg:text-phi-lg font-heading font-bold text-foreground whitespace-nowrap">
+                Robotics
+              </span>
+            </div>
           </Link>
           
           <div className="hidden lg:flex items-center space-x-phi-1">

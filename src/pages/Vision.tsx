@@ -53,8 +53,6 @@ const Vision = () => {
   const timelineReveal = useScrollReveal();
   const ctaReveal = useScrollReveal();
   const heroText = useParallaxMotion({ speed: 0.382 });
-  const visionImage1 = useParallaxMotion({ speed: 0.5 });
-  const visionImage2 = useParallaxMotion({ speed: 0.5 });
   
   return (
     <main className="min-h-screen bg-gradient-to-b from-background via-muted/30 to-background">
@@ -87,7 +85,7 @@ const Vision = () => {
                 buildings are maintained. We envision a future where intelligent robots 
                 handle repetitive tasks, allowing humans to focus on what matters most.
               </p>
-              <motion.div ref={visionImage1.ref} style={{ y: visionImage1.y, scale: visionImage1.scale }}>
+              <div>
                 <AspectRatio ratio={1.618}>
                   <img 
                     src={robotApartment} 
@@ -95,7 +93,7 @@ const Vision = () => {
                     className="rounded-xl shadow-lg w-full h-full object-cover"
                   />
                 </AspectRatio>
-              </motion.div>
+              </div>
             </div>
 
             <div className="relative overflow-hidden bg-card border border-border rounded-2xl p-8">
@@ -106,7 +104,7 @@ const Vision = () => {
                 security patrols, and facility inspections—making our robots the Swiss Army 
                 knife of building operations.
               </p>
-              <motion.div ref={visionImage2.ref} style={{ y: visionImage2.y, scale: visionImage2.scale }}>
+              <div>
                 <AspectRatio ratio={1.618}>
                   <img 
                     src={robotDelivery} 
@@ -114,7 +112,7 @@ const Vision = () => {
                     className="rounded-xl shadow-lg w-full h-full object-cover"
                   />
                 </AspectRatio>
-              </motion.div>
+              </div>
             </div>
           </div>
 

@@ -7,7 +7,6 @@ import { motion } from "framer-motion";
 
 export const Hero = () => {
   const background = useSimpleParallax(0.382);
-  const image = useParallaxMotion({ speed: 0.618 });
   const text = useSimpleParallax(0.236);
   const card = useParallaxMotion({ speed: 0.5 });
   
@@ -55,10 +54,9 @@ export const Hero = () => {
             </div>
           </motion.div>
           
-          <motion.div 
-            ref={image.ref}
-            style={{ y: image.y, scale: image.scale, animationDelay: '0.2s' }}
+          <div 
             className="relative animate-fade-in max-w-phi-content mx-auto"
+            style={{ animationDelay: '0.2s' }}
           >
             <AspectRatio ratio={1.618}>
               <img 
@@ -71,7 +69,7 @@ export const Hero = () => {
                 <span className="text-[10px] sm:text-phi-sm font-accent font-semibold text-primary">ACTIVE</span>
               </div>
             </AspectRatio>
-          </motion.div>
+          </div>
         </div>
 
         <motion.div 
