@@ -49,7 +49,7 @@ export const RaaSModel = () => {
             <img 
               src={robotMall} 
               alt="UpDown Robot fleet in operation" 
-              className="w-full h-full object-cover rounded-2xl shadow-2xl"
+              className="w-full h-full object-contain rounded-2xl shadow-2xl"
             />
           </AspectRatio>
         </div>

@@ -26,7 +26,7 @@ export const VisionRoadmap = () => {
               <img 
                 src={robotCorridor} 
                 alt="Vision of autonomous robots" 
-                className="rounded-2xl shadow-2xl w-full h-full object-cover"
+                className="rounded-2xl shadow-2xl w-full h-full object-contain"
               />
             </AspectRatio>
             
@@ -44,7 +44,7 @@ export const VisionRoadmap = () => {
               <img 
                 src={robotDelivery} 
                 alt="Future delivery capabilities" 
-                className="rounded-2xl shadow-2xl w-full h-full object-cover"
+                className="rounded-2xl shadow-2xl w-full h-full object-contain"
               />
             </AspectRatio>
             

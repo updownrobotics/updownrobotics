@@ -36,7 +36,7 @@ export const Technology = () => {
               <img 
                 src={robotOffice} 
                 alt="UpDown Robot with advanced technology" 
-                className="relative rounded-2xl shadow-2xl w-full h-full object-cover"
+                className="relative rounded-2xl shadow-2xl w-full h-full object-contain"
               />
             </AspectRatio>
             
