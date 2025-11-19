@@ -84,42 +84,14 @@ export const Navigation = () => {
             </div>
           </Link>
           
-          <div className="hidden lg:flex items-center gap-3 xl:gap-6 flex-1 justify-center">
-            {navItems.slice(0, -2).map((item) => (
+          <div className="hidden lg:flex flex-1 items-center justify-end gap-3 xl:gap-5 ml-phi-4">
+            {navItems.map((item) => (
               <Link
                 key={item.name}
                 to={item.path}
                 onClick={(e) => handleNavClick(e, item.path)}
                 className={cn(
-                  "px-3 xl:px-4 py-2 text-sm xl:text-base font-medium transition-all duration-300 relative group whitespace-nowrap hover:scale-105",
-                  isActive(item.path) 
-                    ? "text-primary" 
-                    : "text-muted-foreground hover:text-primary"
-                )}
-              >
-                {item.name}
-                <span
-                  className={cn(
-                    "absolute bottom-0 left-0 w-full h-0.5 bg-primary transition-all duration-300",
-                    isActive(item.path) 
-                      ? "opacity-100 scale-x-100 shadow-[0_0_10px_rgba(0,178,255,0.8)]" 
-                      : "opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100"
-                  )}
-                />
-              </Link>
-            ))}
-            
-          </div>
-
-          <div className="hidden lg:flex items-center gap-3 xl:gap-4">
-            {/* About and Contact */}
-            {navItems.slice(-2).map((item) => (
-              <Link
-                key={item.name}
-                to={item.path}
-                onClick={(e) => handleNavClick(e, item.path)}
-                className={cn(
-                  "px-3 xl:px-4 py-2 text-sm xl:text-base font-medium transition-all duration-300 relative group whitespace-nowrap hover:scale-105",
+                  "px-3 xl:px-4 py-2 text-[13px] xl:text-sm 2xl:text-base font-medium transition-all duration-300 relative group whitespace-nowrap hover:scale-105",
                   isActive(item.path) 
                     ? "text-primary" 
                     : "text-muted-foreground hover:text-primary"
