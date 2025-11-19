@@ -47,13 +47,11 @@ const About = () => {
             <div 
               className="relative"
             >
-              <AspectRatio ratio={1.618}>
-                <img 
-                  src={robotOffice} 
-                  alt="UpDown Robot in Workshop" 
-                  className="w-full h-full object-contain rounded-lg shadow-[0_0_50px_rgba(23,162,184,0.3)]"
-                />
-              </AspectRatio>
+              <img 
+                src={robotOffice} 
+                alt="UpDown Robot in Workshop" 
+                className="w-full h-auto object-cover rounded-lg shadow-2xl"
+              />
             </div>
           </div>
         </section>

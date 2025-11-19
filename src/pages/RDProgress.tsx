@@ -93,13 +93,11 @@ const RDProgress = () => {
                 className="relative"
               >
                 <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full" />
-                <AspectRatio ratio={1.618}>
-                  <img 
-                    src={robotCorridor} 
-                    alt="Navigation Testing" 
-                    className="relative rounded-2xl shadow-2xl w-full h-full object-contain"
-                  />
-                </AspectRatio>
+                <img 
+                  src={robotCorridor} 
+                  alt="Navigation Testing" 
+                  className="relative rounded-2xl shadow-2xl w-full h-auto object-cover"
+                />
               </div>
             </div>
           </div>
