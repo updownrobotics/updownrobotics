@@ -90,7 +90,7 @@ const Vision = () => {
                   <img 
                     src={robotApartment} 
                     alt="Future Vision" 
-                    className="rounded-xl shadow-lg w-full h-full object-cover"
+                    className="rounded-xl shadow-lg w-full h-full object-contain"
                   />
                 </AspectRatio>
               </div>
@@ -109,7 +109,7 @@ const Vision = () => {
                   <img 
                     src={robotDelivery} 
                     alt="Delivery Evolution" 
-                    className="rounded-xl shadow-lg w-full h-full object-cover"
+                    className="rounded-xl shadow-lg w-full h-full object-contain"
                   />
                 </AspectRatio>
               </div>

@@ -66,7 +66,7 @@ const Investors = () => {
               <img 
                 src={robotMall} 
                 alt="UpDown Robotics Technology" 
-                className="rounded-2xl shadow-2xl mx-auto w-full h-full object-cover"
+                className="rounded-2xl shadow-2xl mx-auto w-full h-full object-contain"
               />
             </AspectRatio>
           </div>

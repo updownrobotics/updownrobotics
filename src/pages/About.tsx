@@ -51,7 +51,7 @@ const About = () => {
                 <img 
                   src={robotOffice} 
                   alt="UpDown Robot in Workshop" 
-                  className="w-full h-full object-cover rounded-lg shadow-[0_0_50px_rgba(23,162,184,0.3)]"
+                  className="w-full h-full object-contain rounded-lg shadow-[0_0_50px_rgba(23,162,184,0.3)]"
                 />
               </AspectRatio>
             </div>

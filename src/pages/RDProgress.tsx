@@ -97,7 +97,7 @@ const RDProgress = () => {
                   <img 
                     src={robotCorridor} 
                     alt="Navigation Testing" 
-                    className="relative rounded-2xl shadow-2xl w-full h-full object-cover"
+                    className="relative rounded-2xl shadow-2xl w-full h-full object-contain"
                   />
                 </AspectRatio>
               </div>

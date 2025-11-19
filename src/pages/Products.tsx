@@ -89,7 +89,7 @@ const Products = () => {
                   <img 
                     src={robotOffice} 
                     alt="5-in-1 Smart Cleaning Robot" 
-                    className="rounded-2xl shadow-2xl w-full h-full object-cover"
+                    className="rounded-2xl shadow-2xl w-full h-full object-contain"
                   />
                 </AspectRatio>
               </div>
@@ -106,7 +106,7 @@ const Products = () => {
                   <img 
                     src={robotMall} 
                     alt="Autonomous Cleaning Robot" 
-                    className="rounded-2xl shadow-2xl w-full h-full object-cover"
+                    className="rounded-2xl shadow-2xl w-full h-full object-contain"
                   />
                 </AspectRatio>
               </div>
