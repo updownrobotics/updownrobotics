@@ -29,12 +29,12 @@ const Contact = () => {
           <motion.div 
             ref={heroText.ref}
             style={{ y: heroText.y }}
-            className="max-w-3xl mx-auto space-y-6 animate-fade-in"
+            className="max-w-3xl mx-auto space-y-6 animate-fade-in px-4"
           >
-            <h1 className="text-5xl font-bold text-foreground">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground">
               Contact & <span className="gradient-heading">Support</span>
             </h1>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground">
               Get in touch with our team to learn more about UpDown Robotics and how we can help automate your facility maintenance.
             </p>
           </motion.div>

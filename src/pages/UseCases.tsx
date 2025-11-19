@@ -70,12 +70,12 @@ const UseCases = () => {
           <motion.div 
             ref={heroText.ref}
             style={{ y: heroText.y }}
-            className="text-center mb-16 animate-fade-in"
+            className="text-center mb-16 animate-fade-in px-4"
           >
-            <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-heading font-bold mb-6">
               Built for <span className="gradient-heading">Every Space</span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
               Our intelligent cleaning robots adapt to diverse environments across 
               India's commercial and residential infrastructure
             </p>

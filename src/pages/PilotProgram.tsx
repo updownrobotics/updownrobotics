@@ -67,17 +67,17 @@ const PilotProgram = () => {
           <motion.div 
             ref={heroText.ref}
             style={{ y: heroText.y }}
-            className="text-center mb-16 animate-fade-in"
+            className="text-center mb-16 animate-fade-in px-4"
           >
-            <div className="inline-block px-4 py-2 bg-primary/10 border border-primary/30 rounded-full mb-6">
-              <span className="text-primary font-accent font-semibold">LIMITED SPOTS AVAILABLE</span>
+            <div className="inline-block px-3 sm:px-4 py-2 bg-primary/10 border border-primary/30 rounded-full mb-6">
+              <span className="text-primary font-accent font-semibold text-xs sm:text-sm whitespace-nowrap">LIMITED SPOTS AVAILABLE</span>
             </div>
             
-            <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-heading font-bold mb-6">
               Join Our <span className="gradient-heading">Early Pilot Program</span>
             </h1>
             
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
               Experience our intelligent cleaning robot in your building. 
               Be among the first to revolutionize facility management.
             </p>

@@ -40,12 +40,12 @@ const Products = () => {
           <motion.div 
             ref={heroText.ref}
             style={{ y: heroText.y }}
-            className="text-center mb-phi-6 animate-fade-in"
+            className="text-center mb-phi-6 animate-fade-in px-phi-2"
           >
-            <h1 className="text-phi-5xl md:text-phi-7xl font-heading font-bold mb-phi-4">
+            <h1 className="text-phi-3xl sm:text-phi-4xl md:text-phi-5xl lg:text-phi-7xl font-heading font-bold mb-phi-4">
               Next-Generation <span className="gradient-heading">Cleaning Robots</span>
             </h1>
-            <p className="text-phi-xl text-muted-foreground max-w-phi-content mx-auto">
+            <p className="text-phi-base sm:text-phi-lg md:text-phi-xl text-muted-foreground max-w-phi-content mx-auto">
               Two revolutionary products designed for India's commercial and residential spaces
             </p>
           </motion.div>
@@ -58,11 +58,11 @@ const Products = () => {
                   <span className="text-primary font-accent font-semibold text-phi-sm">LAUNCHING SOON</span>
                 </div>
                 
-                <h2 className="text-phi-4xl md:text-phi-5xl font-heading font-bold">
+                <h2 className="text-phi-2xl sm:text-phi-3xl md:text-phi-4xl lg:text-phi-5xl font-heading font-bold">
                   5-in-1 Smart Cleaning Robot
                 </h2>
                 
-                <p className="text-phi-lg text-muted-foreground">
+                <p className="text-phi-base sm:text-phi-lg text-muted-foreground">
                   Our fully powered manual cleaning robot brings industrial-grade cleaning power 
                   to apartments, offices, and commercial spaces. Five integrated cleaning stages 
                   deliver spotless results with unmatched efficiency.

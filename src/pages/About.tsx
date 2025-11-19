@@ -33,15 +33,15 @@ const About = () => {
             <motion.div 
               ref={heroText.ref}
               style={{ y: heroText.y }}
-              className="space-y-phi-4 animate-fade-in"
+              className="space-y-phi-4 animate-fade-in px-phi-2"
             >
-              <h1 className="text-phi-5xl font-bold text-foreground">
+              <h1 className="text-phi-3xl sm:text-phi-4xl md:text-phi-5xl font-bold text-foreground">
                 About <span className="gradient-heading">UpDown Robotics</span>
               </h1>
-              <p className="text-phi-xl text-muted-foreground leading-relaxed">
+              <p className="text-phi-base sm:text-phi-lg md:text-phi-xl text-muted-foreground leading-relaxed">
                 Founded in India. Built for the world. UpDown Robotics is redefining urban hygiene through AI autonomy.
               </p>
-              <p className="text-phi-lg text-muted-foreground">
+              <p className="text-phi-sm sm:text-phi-base md:text-phi-lg text-muted-foreground">
                 We envision a future where intelligent machines handle tedious cleaning tasks, allowing humans to focus on what truly matters. Our AI-powered robots combine cutting-edge navigation, real-time decision-making, and autonomous operation to deliver spotless environments with zero human intervention.
               </p>
             </motion.div>
