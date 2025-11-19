@@ -13,7 +13,6 @@ const About = () => {
   const timelineReveal = useScrollReveal();
   const foundersReveal = useScrollReveal();
   const heroText = useParallaxMotion({ speed: 0.382 });
-  const heroImage = useParallaxMotion({ speed: 0.618 });
   
   const timeline = [
     { icon: Lightbulb, title: "Idea", year: "2023", desc: "Vision to automate urban hygiene" },
@@ -45,9 +44,7 @@ const About = () => {
                 We envision a future where intelligent machines handle tedious cleaning tasks, allowing humans to focus on what truly matters. Our AI-powered robots combine cutting-edge navigation, real-time decision-making, and autonomous operation to deliver spotless environments with zero human intervention.
               </p>
             </motion.div>
-            <motion.div 
-              ref={heroImage.ref}
-              style={{ y: heroImage.y, scale: heroImage.scale }}
+            <div 
               className="relative"
             >
               <AspectRatio ratio={1.618}>
@@ -57,7 +54,7 @@ const About = () => {
                   className="w-full h-full object-cover rounded-lg shadow-[0_0_50px_rgba(23,162,184,0.3)]"
                 />
               </AspectRatio>
-            </motion.div>
+            </div>
           </div>
         </section>
 

@@ -1,6 +1,7 @@
 import { MapPin, Mail, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
 
 export const Footer = () => {
@@ -37,20 +38,20 @@ export const Footer = () => {
           <div>
             <h4 className="font-semibold mb-phi-3 text-phi-lg">Solutions</h4>
             <ul className="space-y-phi-2">
-              <li><a href="#" className="text-phi-sm text-muted-foreground hover:text-primary transition-colors">RaaS Model</a></li>
-              <li><a href="#" className="text-phi-sm text-muted-foreground hover:text-primary transition-colors">Technology</a></li>
-              <li><a href="#" className="text-phi-sm text-muted-foreground hover:text-primary transition-colors">R&D Lab</a></li>
-              <li><a href="#" className="text-phi-sm text-muted-foreground hover:text-primary transition-colors">Pilot Program</a></li>
+              <li><Link to="/pilot-program" className="text-phi-sm text-muted-foreground hover:text-primary transition-colors">Pilot Program</Link></li>
+              <li><Link to="/technology" className="text-phi-sm text-muted-foreground hover:text-primary transition-colors">Technology</Link></li>
+              <li><Link to="/rd-progress" className="text-phi-sm text-muted-foreground hover:text-primary transition-colors">R&D Progress</Link></li>
+              <li><Link to="/products" className="text-phi-sm text-muted-foreground hover:text-primary transition-colors">Products</Link></li>
             </ul>
           </div>
           
           <div>
             <h4 className="font-semibold mb-phi-3 text-phi-lg">Company</h4>
             <ul className="space-y-phi-2">
-              <li><a href="#" className="text-phi-sm text-muted-foreground hover:text-primary transition-colors">About Us</a></li>
-              <li><a href="#" className="text-phi-sm text-muted-foreground hover:text-primary transition-colors">Investors</a></li>
-              <li><a href="#" className="text-phi-sm text-muted-foreground hover:text-primary transition-colors">Careers</a></li>
-              <li><a href="#" className="text-phi-sm text-muted-foreground hover:text-primary transition-colors">Contact</a></li>
+              <li><Link to="/about" className="text-phi-sm text-muted-foreground hover:text-primary transition-colors">About Us</Link></li>
+              <li><Link to="/investors" className="text-phi-sm text-muted-foreground hover:text-primary transition-colors">Investors</Link></li>
+              <li><Link to="/use-cases" className="text-phi-sm text-muted-foreground hover:text-primary transition-colors">Use Cases</Link></li>
+              <li><Link to="/contact" className="text-phi-sm text-muted-foreground hover:text-primary transition-colors">Contact</Link></li>
             </ul>
           </div>
         </div>

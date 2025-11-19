@@ -28,8 +28,6 @@ const Products = () => {
   const version2Reveal = useScrollReveal();
   const disclaimerReveal = useScrollReveal();
   const heroText = useParallaxMotion({ speed: 0.382 });
-  const image1 = useParallaxMotion({ speed: 0.618 });
-  const image2 = useParallaxMotion({ speed: 0.618 });
   
   return (
     <main className="min-h-screen bg-gradient-to-b from-background via-muted/30 to-background">
@@ -84,9 +82,7 @@ const Products = () => {
                 </div>
               </div>
 
-              <motion.div 
-                ref={image1.ref}
-                style={{ y: image1.y, scale: image1.scale }}
+              <div 
                 className="order-1 lg:order-2 relative"
               >
                 <AspectRatio ratio={1.618}>
@@ -96,16 +92,14 @@ const Products = () => {
                     className="rounded-2xl shadow-2xl w-full h-full object-cover"
                   />
                 </AspectRatio>
-              </motion.div>
+              </div>
             </div>
           </div>
 
           {/* Version 2 - Autonomous Robot */}
           <div ref={version2Reveal.ref} className={`transition-all duration-700 ${version2Reveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="grid lg:grid-cols-2 gap-phi-5 items-center">
-              <motion.div 
-                ref={image2.ref}
-                style={{ y: image2.y, scale: image2.scale }}
+              <div 
                 className="relative"
               >
                 <AspectRatio ratio={1.618}>
@@ -115,7 +109,7 @@ const Products = () => {
                     className="rounded-2xl shadow-2xl w-full h-full object-cover"
                   />
                 </AspectRatio>
-              </motion.div>
+              </div>
 
               <div className="space-y-phi-4">
                 <div className="inline-block px-phi-3 py-phi-2 bg-accent/10 border border-accent/30 rounded-full">

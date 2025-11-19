@@ -45,7 +45,6 @@ const Technology = () => {
   const techGridReveal = useScrollReveal();
   const specsReveal = useScrollReveal();
   const heroText = useParallaxMotion({ speed: 0.382 });
-  const heroImage = useParallaxMotion({ speed: 0.618 });
   
   return (
     <main className="min-h-screen bg-gradient-to-b from-background via-muted/30 to-background">
@@ -68,9 +67,7 @@ const Technology = () => {
           </motion.div>
 
           {/* Hero Image Section */}
-          <motion.div 
-            ref={heroImage.ref}
-            style={{ y: heroImage.y, scale: heroImage.scale }}
+          <div 
             className={`mb-24 relative transition-all duration-700 ${heroImageReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
           >
             <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full" />
@@ -86,7 +83,7 @@ const Technology = () => {
             
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 border-2 border-primary/30 rounded-full animate-glow-pulse" />
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 border-2 border-primary/20 rounded-full animate-glow-pulse" style={{ animationDelay: "0.5s" }} />
-          </motion.div>
+          </div>
 
           {/* Technology Grid */}
           <div ref={techGridReveal.ref} className={`grid md:grid-cols-2 lg:grid-cols-3 gap-8 transition-all duration-700 ${techGridReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
