@@ -57,8 +57,8 @@ export const Navigation = () => {
         scrolled ? "bg-background/80 backdrop-blur-md shadow-[0_0_30px_rgba(0,178,255,0.3)]" : "bg-background"
       )}
     >
-      <div className="container mx-auto px-phi-2 sm:px-phi-3">
-        <div className="flex items-center justify-between h-16 sm:h-phi-6">
+      <div className="container mx-auto px-4 lg:px-8">
+        <div className="flex items-center justify-between h-20 gap-8">
           <Link 
             to="/" 
             onClick={(e) => {
@@ -67,7 +67,7 @@ export const Navigation = () => {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }
             }}
-            className="flex items-center gap-phi-1 sm:gap-phi-2 group flex-shrink-0 mr-phi-3 sm:mr-phi-4 md:mr-phi-5"
+            className="flex items-center gap-phi-2 group flex-shrink-0"
           >
             <img 
               src={logo} 
@@ -84,14 +84,42 @@ export const Navigation = () => {
             </div>
           </Link>
           
-          <div className="hidden lg:flex items-center gap-1 xl:gap-3">
+          <div className="hidden lg:flex items-center gap-4 xl:gap-6 flex-1 justify-center">
             {navItems.slice(0, -2).map((item) => (
               <Link
                 key={item.name}
                 to={item.path}
                 onClick={(e) => handleNavClick(e, item.path)}
                 className={cn(
-                  "px-3 xl:px-4 py-2 text-sm xl:text-base font-medium transition-all duration-300 relative group whitespace-nowrap hover:scale-105",
+                  "px-4 py-2 text-base font-medium transition-all duration-300 relative group whitespace-nowrap hover:scale-105",
+                  isActive(item.path) 
+                    ? "text-primary" 
+                    : "text-muted-foreground hover:text-primary"
+                )}
+              >
+                {item.name}
+                <span
+                  className={cn(
+                    "absolute bottom-0 left-0 w-full h-0.5 bg-primary transition-all duration-300",
+                    isActive(item.path) 
+                      ? "opacity-100 scale-x-100 shadow-[0_0_10px_rgba(0,178,255,0.8)]" 
+                      : "opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100"
+                  )}
+                />
+              </Link>
+            ))}
+            
+          </div>
+
+          <div className="hidden lg:flex items-center gap-4">
+            {/* About and Contact */}
+            {navItems.slice(-2).map((item) => (
+              <Link
+                key={item.name}
+                to={item.path}
+                onClick={(e) => handleNavClick(e, item.path)}
+                className={cn(
+                  "px-4 py-2 text-base font-medium transition-all duration-300 relative group whitespace-nowrap hover:scale-105",
                   isActive(item.path) 
                     ? "text-primary" 
                     : "text-muted-foreground hover:text-primary"
@@ -112,37 +140,12 @@ export const Navigation = () => {
             {/* Pilot Program Button */}
             <Link to="/pilot-program">
               <Button 
-                size="sm"
+                size="default"
                 className="bg-gradient-to-r from-accent to-electric-cyan hover:shadow-lg hover:shadow-accent/50 text-accent-foreground font-semibold transition-all hover:scale-105"
               >
                 Pilot Program
               </Button>
             </Link>
-            
-            {/* About and Contact */}
-            {navItems.slice(-2).map((item) => (
-              <Link
-                key={item.name}
-                to={item.path}
-                onClick={(e) => handleNavClick(e, item.path)}
-                className={cn(
-                  "px-3 xl:px-4 py-2 text-sm xl:text-base font-medium transition-all duration-300 relative group whitespace-nowrap hover:scale-105",
-                  isActive(item.path) 
-                    ? "text-primary" 
-                    : "text-muted-foreground hover:text-primary"
-                )}
-              >
-                {item.name}
-                <span
-                  className={cn(
-                    "absolute bottom-0 left-0 w-full h-0.5 bg-primary transition-all duration-300",
-                    isActive(item.path) 
-                      ? "opacity-100 scale-x-100 shadow-[0_0_10px_rgba(0,178,255,0.8)]" 
-                      : "opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100"
-                  )}
-                />
-              </Link>
-            ))}
           </div>
 
           {/* Mobile Menu */}
