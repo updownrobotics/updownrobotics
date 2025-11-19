@@ -23,6 +23,7 @@ export const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const isHomePage = location.pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -53,12 +54,15 @@ export const Navigation = () => {
   return (
     <nav
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        scrolled ? "bg-background/80 backdrop-blur-md shadow-[0_0_30px_rgba(0,178,255,0.3)]" : "bg-background"
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-200",
+        scrolled || !isHomePage
+          ? "bg-white shadow-[0px_4px_20px_rgba(0,0,0,0.06)]"
+          : "bg-transparent"
       )}
     >
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="flex items-center justify-between h-20 gap-8">
+      <div className="container mx-auto px-4 lg:px-6 xl:px-8">
+        <div className="flex items-center justify-between h-20 gap-4">
+
           <Link 
             to="/" 
             onClick={(e) => {
@@ -67,59 +71,117 @@ export const Navigation = () => {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }
             }}
-            className="flex items-center gap-phi-2 group flex-shrink-0"
+            className="flex items-center gap-2 group flex-shrink-0"
           >
             <img 
               src={logo} 
               alt="UpDown Robotics Logo" 
-              className="h-8 sm:h-10 md:h-12 w-auto animate-float animate-glow-pulse group-hover:scale-110 transition-transform duration-phi" 
+              className="h-10 md:h-12 w-auto animate-float animate-glow-pulse group-hover:scale-110 transition-transform duration-phi" 
             />
             <div className="flex flex-col leading-none">
-              <span className="text-[10px] sm:text-xs md:text-sm lg:text-phi-base font-heading font-bold text-foreground whitespace-nowrap">
+              <span className={cn(
+                "text-xs md:text-sm lg:text-base font-heading font-bold whitespace-nowrap transition-colors duration-200",
+                scrolled || !isHomePage ? "text-foreground" : "text-white"
+              )}>
                 UpDown
               </span>
-              <span className="text-[10px] sm:text-xs md:text-sm lg:text-phi-base font-heading font-bold text-foreground whitespace-nowrap">
+              <span className={cn(
+                "text-xs md:text-sm lg:text-base font-heading font-bold whitespace-nowrap transition-colors duration-200",
+                scrolled || !isHomePage ? "text-foreground" : "text-white"
+              )}>
                 Robotics
               </span>
             </div>
           </Link>
           
-          <div className="hidden lg:flex flex-1 items-center justify-end gap-3 xl:gap-5 ml-phi-4">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                to={item.path}
-                onClick={(e) => handleNavClick(e, item.path)}
-                className={cn(
-                  "px-3 xl:px-4 py-2 text-[13px] xl:text-sm 2xl:text-base font-medium transition-all duration-300 relative group whitespace-nowrap hover:scale-105",
-                  isActive(item.path) 
-                    ? "text-primary" 
-                    : "text-muted-foreground hover:text-primary"
-                )}
-              >
-                {item.name}
-                <span
+          {/* Desktop Menu: ≥1440px with 32px spacing, 1024-1439px with tighter spacing */}
+          <div className="hidden lg:flex flex-1 items-center justify-center gap-4 lg:gap-6 xl:gap-8">
+            {navItems.map((item) => {
+              const isPilotProgram = item.name === "Pilot Program";
+              return (
+                <Link
+                  key={item.name}
+                  to={item.path}
+                  onClick={(e) => handleNavClick(e, item.path)}
                   className={cn(
-                    "absolute bottom-0 left-0 w-full h-0.5 bg-primary transition-all duration-300",
-                    isActive(item.path) 
-                      ? "opacity-100 scale-x-100 shadow-[0_0_10px_rgba(0,178,255,0.8)]" 
-                      : "opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100"
+                    "relative group whitespace-nowrap transition-all duration-150",
+                    "text-[11px] lg:text-xs xl:text-sm font-medium",
+                    "px-2 lg:px-3 py-2",
+                    isPilotProgram && "bg-primary text-white rounded-md px-4 hover:bg-primary/90",
+                    !isPilotProgram && (isActive(item.path) 
+                      ? "text-primary" 
+                      : scrolled || !isHomePage ? "text-muted-foreground hover:text-primary" : "text-white/90 hover:text-white"
+                    )
                   )}
-                />
-              </Link>
-            ))}
+                >
+                  {item.name}
+                  {!isPilotProgram && (
+                    <span
+                      className={cn(
+                        "absolute bottom-0 left-[15%] w-[70%] h-0.5 bg-primary transition-all duration-150",
+                        isActive(item.path) 
+                          ? "opacity-100 scale-x-100" 
+                          : "opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100"
+                      )}
+                    />
+                  )}
+                </Link>
+              );
+            })}
           </div>
 
-          {/* Mobile Menu */}
+          {/* Tablet & Mobile Menu */}
           <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
             <SheetTrigger asChild className="lg:hidden">
-              <Button variant="ghost" size="icon" className="text-primary hover:bg-primary/10">
+              <Button 
+                variant="ghost" 
+                size="icon" 
+                className={cn(
+                  "transition-colors duration-200",
+                  scrolled || !isHomePage ? "text-primary hover:bg-primary/10" : "text-white hover:bg-white/10"
+                )}
+                aria-label="Open navigation menu"
+              >
                 <Menu className="h-6 w-6" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[280px] bg-background/95 backdrop-blur-md border-l border-primary/20">
-              <div className="flex flex-col space-y-4 mt-8">
-                {navItems.map((item) => (
+            <SheetContent 
+              side="right" 
+              className="w-[280px] sm:w-[320px] bg-white border-l border-gray-200"
+            >
+              <div className="flex flex-col space-y-2 mt-8">
+                {/* Pilot Program and Contact at top */}
+                {["Pilot Program", "Contact"].map((name) => {
+                  const item = navItems.find(i => i.name === name);
+                  if (!item) return null;
+                  const isPilotProgram = name === "Pilot Program";
+                  return (
+                    <Link
+                      key={item.name}
+                      to={item.path}
+                      onClick={(e) => {
+                        handleNavClick(e, item.path);
+                        setMobileMenuOpen(false);
+                      }}
+                      className={cn(
+                        "px-4 py-3 text-base font-medium transition-all duration-150 rounded-lg min-h-[44px] flex items-center",
+                        isPilotProgram 
+                          ? "bg-primary text-white hover:bg-primary/90"
+                          : isActive(item.path)
+                            ? "text-primary bg-primary/10"
+                            : "text-muted-foreground hover:text-primary hover:bg-primary/5"
+                      )}
+                    >
+                      {item.name}
+                    </Link>
+                  );
+                })}
+                
+                {/* Separator */}
+                <div className="h-px bg-gray-200 my-2" />
+                
+                {/* Rest of menu items */}
+                {navItems.filter(item => item.name !== "Pilot Program" && item.name !== "Contact").map((item) => (
                   <Link
                     key={item.name}
                     to={item.path}
@@ -128,9 +190,9 @@ export const Navigation = () => {
                       setMobileMenuOpen(false);
                     }}
                     className={cn(
-                      "px-4 py-3 text-base font-medium transition-all duration-300 rounded-lg relative",
+                      "px-4 py-3 text-base font-medium transition-all duration-150 rounded-lg min-h-[44px] flex items-center",
                       isActive(item.path) 
-                        ? "text-primary bg-primary/10 shadow-[0_0_10px_rgba(0,178,255,0.3)]" 
+                        ? "text-primary bg-primary/10" 
                         : "text-muted-foreground hover:text-primary hover:bg-primary/5"
                     )}
                   >
