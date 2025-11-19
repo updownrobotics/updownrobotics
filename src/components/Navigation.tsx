@@ -84,14 +84,14 @@ export const Navigation = () => {
             </div>
           </Link>
           
-          <div className="hidden lg:flex items-center space-x-phi-1">
+          <div className="hidden xl:flex items-center space-x-1">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 to={item.path}
                 onClick={(e) => handleNavClick(e, item.path)}
                 className={cn(
-                  "px-phi-2 lg:px-phi-3 py-phi-2 text-[11px] lg:text-phi-sm font-medium transition-all duration-300 relative group whitespace-nowrap",
+                  "px-2 py-2 text-[11px] font-medium transition-all duration-300 relative group whitespace-nowrap",
                   isActive(item.path) 
                     ? "text-primary" 
                     : "text-muted-foreground hover:text-primary"
@@ -112,7 +112,7 @@ export const Navigation = () => {
 
           {/* Mobile Menu */}
           <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
-            <SheetTrigger asChild className="lg:hidden">
+            <SheetTrigger asChild className="xl:hidden">
               <Button variant="ghost" size="icon" className="text-primary hover:bg-primary/10">
                 <Menu className="h-6 w-6" />
               </Button>
